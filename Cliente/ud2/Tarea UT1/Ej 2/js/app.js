@@ -22,6 +22,7 @@ console.log (`La suma desde 1 hasta ${numero} es ${suma}`);
  * bucle para  hacer que  
  * te muestre solos los numeros pares de un numero dado por consola
  */
+    console.log(`mostrando numeros pares desde 2 hasta ${numero}`);
     for(let i=2;i<=numero; i+2){
         console.log(i);
     }
