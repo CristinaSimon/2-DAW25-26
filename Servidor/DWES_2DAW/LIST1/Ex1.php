@@ -9,18 +9,23 @@
 </head>
 <body>
 <?php
-$a=6;
-$b=10;
+if(isset($_REQUEST['a'])) $a = htmlspecialchars($_REQUEST["a"]);
+else $a = 6;
+if(isset($_REQUEST['b'])) $b = htmlspecialchars($_REQUEST["b"]);
+else $b = 10;
+
 $suma=$a+$b;
 $resta=$b-$a;
 $multiplicacion=$a*$b;
-$division=$a/$b;
+$division=number_format($a/$b,2);
+$media=($suma)/2;
 
 echo "los numeros son:  $a  y  $b  <br>";
 echo "La suma es $suma <br>
 La resta es ".$resta."<br>
 La multiplicacion es ".$multiplicacion."<br>
-La division es ".$division."<br>";
+La division es ".$division."<br>
+La media es ".$media."<br>";
 
 if($a>$b){
     echo "El numero mayor es: ".$a."<br>";

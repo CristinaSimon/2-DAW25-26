@@ -10,26 +10,34 @@ function crearVent(){
 }
 
 function resimensionarVent(){
-    ventana.resizeTo("750","350");
-    ventana.document.writeln("<h2>Ventana redimensionada a 750x350 px</h2>");
-    ventana.focus
+    if(ventana && !ventana.close){
+
+        ventana.resizeTo("750","350");
+        ventana.document.writeln("<h2>Ventana redimensionada a 750x350 px</h2>");
+        ventana.focus
+    }else{
+        alert("No esta abierta la ventana secundaria")
+    }
 }
 
 function moverVent(){
-    let ancho=outerWidth, 
-        alto=outerHeight, 
-        altoVent= ventana.outerHeight, 
-        anchoVent=ventana.outerWidth;
-    ventana.moveBy((alto/2),(ancho/2));
-    ventana.focus
+    if(ventana && !ventana.close){
+        let ancho=outerWidth, 
+            alto=outerHeight; 
+        ventana.moveBy((alto/2),(ancho/2));
+        ventana.focus
+
+    }else{
+        alert("No esta abierta la ventana secundaria")
+    }
 }
 
 function cerrarVent(){
     if (ventana==undefined || ventana.closed) {
+        alert("No hay ventana secundaria abierta, se  cerrara la principal")
         self.close(); // cerrar ventana principal
     }else if (confirm(`Ventana secundaria abierta\n¿Quiere cerrar la ventana secundaria?`)){
         ventana.close(); //cerrar ventana secundaria
-        self.close(); //cerrar ventana principal
     }else{
         ventana.focus();
     }
