@@ -9,15 +9,14 @@
 </head>
 <body>
 <?php
-echo "<table border='1' width='270px'>";
-for ($i=1; $i<=8; $i++){
+echo "<table border='1' cellspacing='0px' cellpadding='0px' width='270px'>";
+for ($fila=1; $fila<=9; $fila++){
     echo "<tr width='30px' height='30px'>";
-    for ($j=1; $j<=8; $j++){
-        //echo"<td width='30px' height='30px'>"." </td>";
-        if($i%2==0 && $j%2!==0){
-            echo "<td bgcolor='red' width='30px' height='30px'>";
+    for ($columna=1; $columna<=9; $columna++){
+        if(($fila%2!==0 &&$columna%2==0)||($fila%2==0 && $columna%2!==0)){
+            echo "<td bgcolor='black' width='30px' height='30px'>";
         }else{
-            echo "<td bgcolor='green' width='30px' height='30px'>";
+            echo "<td bgcolor='white' width='30px' height='30px'>";
         }
     }
     echo "</tr>";
