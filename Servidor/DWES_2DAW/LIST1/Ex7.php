@@ -15,10 +15,27 @@ $temperatures = array(78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76,
 $u_temperature=array_unique($temperatures);
 $sum=0;
 foreach ($temperatures as $temperature) {
-    $sum=+$temperature;
+    $sum=$sum+$temperature;
 }
 $avarage=($sum/count($temperatures));
-echo "Average temperature is $avarage.<br>";
+echo "Average temperature is ". round($avarage,2)."<br>";
+
+sort($u_temperature);
+echo "List of five lowest temperatures : ";
+for($i=0;$i<5;$i++){
+
+    echo $u_temperature[$i];
+    echo ", ";
+
+}
+echo "<br>";
+//rsort($u_temperature);
+$u_tem=count($u_temperature);
+$u2_temp= $u_tem-5;
+echo "List of five highest temperatures : ";
+for($i=$u2_temp;$i<$u_tem;$i++){
+       echo $u_temperature[$i].", ";
+}
 
 ?>
 </body>
