@@ -2,6 +2,7 @@
 const comentario="@usuario123: ¡Me encanta este curso de JavaScript! pero odio, odio los bugs... "
 
 
+
 document.writeln(`El comentario es <strong>${comentario}</strong><br>`);
 document.writeln(`El nº de caracteres es: <strong>${comentario.length+1}</strong><br>`);
 document.writeln(`El nº de caracteres despues de limpiar los espacios en blanco es: <strong></strong><br>`);
