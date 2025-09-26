@@ -1,0 +1,5 @@
+[26/09/2025 11:56:37,22] Copiando archivos desde C:\Users\Usuario\Desktop\DWEC-25_26_origen a C:\Users\Usuario\Desktop\CristinaSimon\Cliente\DWEC-25_26... 
+
+2025/09/26 11:56:37 ERROR 2 (0x00000002) Obteniendo acceso al directorio de origen C:\Users\Usuario\Desktop\DWEC-25_26_origen\
+El sistema no puede encontrar el archivo especificado.
+[26/09/2025 11:56:37,36] No hay cambios nuevos para commitear. 
