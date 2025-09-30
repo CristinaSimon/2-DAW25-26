@@ -5,7 +5,7 @@ const comentario="@usuario123: ¡Me encanta este curso de JavaScript! pero odio,
 
 document.writeln(`El comentario es <strong>${comentario}</strong><br>`);
 document.writeln(`El nº de caracteres es: <strong>${comentario.length+1}</strong><br>`);
-document.writeln(`El nº de caracteres despues de limpiar los espacios en blanco es: <strong></strong><br>`);
+document.writeln(`El nº de caracteres despues de limpiar los espacios en blanco es: <strong>${comentario.trim().length}</strong><br>`);
 document.writeln(`El usuario es: <strong></strong><br>`);
 document.writeln(`El comentario en mayúsculas es: <strong>${comentario.toLocaleUpperCase()}</strong><br>`);
 document.writeln(`El comentario en minusculas es: <strong>${comentario.toLocaleLowerCase()}</strong><br>`);
