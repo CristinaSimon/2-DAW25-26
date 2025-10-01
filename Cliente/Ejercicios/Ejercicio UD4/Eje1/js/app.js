@@ -19,13 +19,11 @@ function agregarProducto (nombre, cantidad){
  * @param {String} nombreProducto 
  * @param {number} cantidadProducto 
  */
-const eliminarProducto=function(nombreProducto,cantidadProducto){
-    if(cantidadProducto===0 && nombreProducto===""){
+const eliminarProducto=function(nombre,cantidad){
+    if(cantidadProducto===0 || cantidad>cantidadProducto|| nombre!==nombreProducto){
         alert(`No existe el producto`)
     }else{
-        cantidadProducto=0;
-        nombreProducto="";
-
+        cantidadProducto=cantidad;
     }
 }
 /**
