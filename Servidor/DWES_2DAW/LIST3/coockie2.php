@@ -33,8 +33,8 @@ if(isset($_REQUEST['listaUsruario'])){
 ?>
     <form action="coockie2.php">
         <label>User</label><input type="text" name="usuario"> <br>
-        <input type="submit" value="submit">
-        <input type="submit" value="reset">
+        <input type="submit" name="enviar" value="submit">
+        <input type="submit" name="resetear" value="reset">
         <a href="coockie2.php?listausuario=true">Invento Rubén</a>
     </form>
 </body>

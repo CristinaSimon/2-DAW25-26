@@ -1,0 +1,228 @@
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+* , *::before , *::after{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+*::before , *::after{
+  display: block;
+}
+img, picture, video, iframe, figure , canvas{
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  height: initial;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+p a {
+  display: inline;
+}
+li , menu, summary {
+  list-style: none;
+}
+ol{
+  counter-reset: revert;
+}
+html {
+  scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em, mark, del, pre, code {
+  font:inherit;
+  line-height: 1em;
+  color: inherit;
+  text-decoration: none;
+  text-wrap: pretty;
+}
+mark{
+  background-color: transparent;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+form, input, textarea, select, button, label {
+  font:inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+}
+textarea {
+  white-space: pre-wrap;
+}
+::placeholder {
+  color: unset;
+}
+button , label{
+  cursor: pointer;
+}
+table, tr, td , th, thead, tbody, tfoot{
+  border-collapse: collapse;
+  border-spacing: 0;
+  font:inherit;
+}
+svg {
+  width: 100%;
+  height: initial;
+  display: block;
+  fill: currentColor;
+}
+p svg{
+  display: inline;
+  width: initial;
+}
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+body {
+  min-height: 100vh;
+  color:inherit;
+  line-height: 1.5em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/***************/
+:root{
+    --white: #ffffff;
+    --background-header:#868b9c;
+    --background-submenu: #939393;
+    --grey: #85888C;
+    --yelow: #ffff00;
+    --verde-fluor: rgb(100, 190, 10);
+    --resltado: red;
+}
+/*************/
+
+/**************/
+/*************HEADER***********/
+.header-conteiner{
+    background-color: var(--background-header);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px 1fr;
+
+}
+.show-menu-cb{
+    display: none;
+}
+.show-menu-lb{
+    cursor: pointer;
+    text-align: right;
+}
+nav{
+    display: none;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3 ;
+    /* justify-items: center; */
+}
+input[type=checkbox]:checked~nav{
+    display: block;
+}
+.top-bar{
+    display: none;
+}
+.nav-menu{
+  text-align: center;
+}
+.logo{
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2 ;
+  }
+
+
+/**********MAIN**********/
+.main-container{
+
+}
+
+/***********FOOTER**********/
+.footer-container{
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.foot-info-1{
+    height: 150;
+    background-color: var(--yelow);
+}
+.foot-info-2{
+    height: 50;
+    background-color: white;
+}
+/**************DESKTOP DESIGN****************/
+@media screen  and (min-width: 600px) {
+    .show-menu-lb{
+        display: none;
+    }
+    .nav-menu{
+        display: flex;
+    }
+    .seccion-contact-info{
+        flex-direction: row;
+    }
+    .menu{
+        display: flex;
+        justify-content: end;        
+        flex-direction: row;
+    }
+    ul li{
+      padding-right: 20px;
+    }
+    .logo{
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2 ;
+
+    }
+    .top-bar{
+      display: block;
+    }
+    nav{
+    display: none;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3 ;
+    /* justify-items: center; */
+  }
+  input[type=checkbox]:checked~nav{
+      display: block;
+  }
+  .nav-menu{
+    text-align: center;
+  }
+
+
+
+}
