@@ -15,7 +15,9 @@ export class Cancion {
     Cancion.#totalCanciones++;
   }
 
-  // === Getters y Setters con validaciones ===
+  /**
+   * Getter y setter de los atributos
+   */
   get titulo() {
     return this.#titulo;
   }
@@ -60,15 +62,30 @@ export class Cancion {
     this.#esPremium = valor;
   }
 
-  // === Métodos ===
+/**
+ * Metodos
+ */
+
+
+/**
+ * Metodo para aumentar el numero de me gustas de una cancion concreta
+ */
   darMeGusta() {
     this.#numMeGusta++;
   }
 
+  /**
+   * Metodo que devuelve un string con el titulo de la cancion y el artista
+   * @returns {string}
+   */
   toString() {
     return `${this.#titulo} - ${this.#artista}`;
   }
 
+  /**
+   * Metodo para obtener el total de instancias de 
+   * @returns {number}
+   */
   static obtenerTotalCanciones() {
     return Cancion.#totalCanciones;
   }
