@@ -1,5 +1,5 @@
 "use strict"
-import { Cancion } from "./cancion.js";
+import { Cancion } from "./cancion.js"; //Exporta la clase cancion del scrip que la contiene
 
 export class ListaReproduccion {
   static #instancias = new Map(); // Patrón Singleton
@@ -21,6 +21,7 @@ export class ListaReproduccion {
     ListaReproduccion.#instancias.set(nombre, this);
   }
 
+  /**Getter y Setter */
   get nombre() {
     return this.#nombre;
   }
@@ -35,32 +36,53 @@ export class ListaReproduccion {
   get canciones() {
     return this.#canciones;
   }
+  /**Metodos  */
 
+  /**
+   * Metodo para aladir una cancion a la lista de reproducción
+   * @param {cancion} cancion 
+   */
   anadirCancion(cancion) {
     if (!(cancion instanceof Cancion)) {
       throw new Error("El objeto debe ser una instancia de Cancion.");
     }
     this.#canciones.push(cancion);
   }
-
+/**
+ * Metodo para dar me gusta a la cancion deseada
+ */
   darMeGusta() {
-    this.#canciones.forEach(c => c.darMeGusta());
+    this.#canciones.forEach(cancion => cancion.darMeGusta());
   }
-
+/**
+ * Metodo para obtener las canciones premium
+ * @returns {array} devuelve el array de canciones premium
+ */
   obtenerCancionesPremium() {
-    return this.#canciones.filter(c => c.esPremium);
+    return this.#canciones.filter(cancion => cancion.esPremium);
   }
 
+  /**
+   * Metodo para ordenar canciones
+   */
   ordenarCanciones() {
     this.#canciones.sort((a, b) => b.numMeGusta - a.numMeGusta);
   }
 
+  /**
+   * Metodo para devolver las primeras tres canciones 
+   * @returns 
+   */
   obtenerPrimerasCanciones() {
     return this.#canciones.slice(0, 3);
   }
 
+  /**
+   * Metodo paar retornar una lista y las canciones que la componen
+   * @returns {string} Retorna un texto con el nomnre la lista y las canciones que la componen
+   */
   toString() {
-    const cancionesStr = this.#canciones.map(c => c.toString()).join(", ");
+    const cancionesStr = this.#canciones.map(cancion => cancion.toString()).join(", ");
     return `Lista: ${this.#nombre} | Canciones: ${cancionesStr}`;
   }
 

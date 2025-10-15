@@ -39,7 +39,8 @@ function obtenerListaHTML(canciones) {
   `).join("");
 }
 
-// === Ejecución principal ===
+/** Cuerpo del Script***/
+
 const lista = ListaReproduccion.obtenerInstancia("Wake Up Gently");
 anadirCanciones(lista);
 
@@ -47,17 +48,14 @@ anadirCanciones(lista);
 document.getElementById("nombre-lista").textContent = lista.nombre;
 
 // Mostrar canciones originales
-document.getElementById("canciones-originales").innerHTML =
-  `<ul>${obtenerListaHTML(lista.canciones)}</ul>`;
+document.getElementById("canciones-originales").innerHTML = `<ul>${obtenerListaHTML(lista.canciones)}</ul>`;
 
 // Mostrar solo canciones premium
-document.getElementById("canciones-premium").innerHTML =
-  `<ul>${obtenerListaHTML(lista.obtenerCancionesPremium())}</ul>`;
+document.getElementById("canciones-premium").innerHTML =`<ul>${obtenerListaHTML(lista.obtenerCancionesPremium())}</ul>`;
 
 // Aumentar "Me gusta" a todas
 lista.darMeGusta();
-document.getElementById("canciones-aumento-megusta").innerHTML =
-  `<ul>${obtenerListaHTML(lista.canciones)}</ul>`;
+document.getElementById("canciones-aumento-megusta").innerHTML = `<ul>${obtenerListaHTML(lista.canciones)}</ul>`;
 
 // Mostrar top 3 canciones con más "Me gusta"
 lista.ordenarCanciones();
@@ -65,4 +63,4 @@ document.getElementById("canciones-mas-megusta").innerHTML =
   `<ul>${obtenerListaHTML(lista.obtenerPrimerasCanciones())}</ul>`;
 
 // Mostrar total de canciones en consola
-console.log("Total de canciones creadas:", Cancion.obtenerTotalCanciones());
+document.getElementById("numCanciones").innerHTML=`<p> ${Cancion.obtenerTotalCanciones()}</p>`;

@@ -83,7 +83,7 @@ export class Cancion {
   }
 
   /**
-   * Metodo para obtener el total de instancias de 
+   * Metodo para obtener el total de instancias de canción
    * @returns {number}
    */
   static obtenerTotalCanciones() {
@@ -91,7 +91,9 @@ export class Cancion {
   }
 }
 
-// === Subclase CancionPremium ===
+/**
+ * Clase premium que extiende de la clase cancion
+ */
 export class CancionPremium extends Cancion {
   constructor(titulo, artista) {
     super(titulo, artista);
