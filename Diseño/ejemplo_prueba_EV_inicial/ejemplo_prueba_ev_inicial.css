@@ -7,9 +7,6 @@
     --verde-fluor: rgb(100, 190, 100);
     --footer-background: #008B8B;
     --resaltado: red;
-    --verde:#23A036;
-    --black:#000000;
-    --font-family: "Poppins", sans-serif;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -70,46 +67,20 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-body{
-    font-family: var(--font-family);
-}
+
 /*****************/
 /************ HEADER *************/
 .header-container {
     background-color: var(--background-header);
     display: grid;
-    grid-template-columns: minmax(200px 400px) auto;
+    grid-template-columns: 50px auto;
     grid-template-rows: auto 1fr;
+
+
 }
 
 .top-bar {
     display: none;
-    text-align: end;
-    justify-content: space-around;
-    background-color: var(--black);
-    color: var(--white);
-    padding-inline: 20px;
-    font-size: small;
-}
-.top-bar-phone{
-    margin-right: 20px;
-    padding-block: 10px;
-
-}
-.linea-vertical{
-
-}
-.top-bar-email{
-    margin-left: 10px;
-    padding-block: 10px;
-
-}
-.top-bar i{
-    color: var(--yellow);
-}
-.top-bar-social-links{
-    color: var(--yellow);
-
 }
 
 .show-menu-cb {
@@ -119,9 +90,6 @@ body{
 .show-menu-lb {
     cursor: pointer;
     text-align: right;
-    display: flex;
-    justify-content: end;
-    align-content: center;
 }
 
 nav {
@@ -139,15 +107,7 @@ input[type=checkbox]:checked~nav {
 .nav-menu {
     text-align: center;
 }
-.logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: calc(1.5rem +4vw);
-    color: var(--yellow);
-    background-color: var(--verde-fluor);
-}
+
 
 
 
@@ -209,7 +169,7 @@ input[type=checkbox]:checked~nav {
 
 
 /*********** DESKTOP DESIGN *****************/
-@media screen and (min-width:640px) {
+@media screen and (min-width:600px) {
 
     /************HEADER****************/
     .top-bar {
@@ -217,9 +177,6 @@ input[type=checkbox]:checked~nav {
         text-align: end;
         justify-content: space-between;
 
-    }
-    .logo{
-        transition: font-sizae 1s linear;
     }
 
     .top-bar-contact {
@@ -258,13 +215,3 @@ input[type=checkbox]:checked~nav {
 
 
 }
-/*********** DESKTOP DESIGN *****************/
-@media screen and (min-width:950px) {
-    .logo{
-        font-size: 72px;
-        transition: font-sizae 0.5s linear;
-
-    }
-
-}
-

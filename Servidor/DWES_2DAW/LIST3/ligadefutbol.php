@@ -75,7 +75,7 @@ arsort($tabla); // ordenar desc por puntos
     <?php
     if(isset($_REQUEST["liga"])){
         $partidos=$_REQUEST["partidos"];
-        echo "<div style='margin-top:10px;'><label>Local Team</label><label> Goals</label> <label>Visiting Team</label> <label>Goals</label></div>";
+        echo "<label>Local Team</label><label> Goals</label> <label>Visiting Team</label> <label>Goals</label>";
         for ($i=0; $i < $partidos; $i++) {
             echo "<input type='text' name='localteam[$i]' placeholder='Local Team'>";
             echo "<input type='number' name='localgols[$i]' placeholder='Goals' min='0'>";

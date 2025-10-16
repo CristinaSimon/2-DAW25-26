@@ -2,13 +2,24 @@
 const gestionSensores=(function(){
 
     class Monitor{
-        constructor(){}
-    }
-    class Sensor{
         #sensors=[];
+        constructor(sensors){
+            if(Monitor.instance){
+                return Monitor.instance
+            }
+
+            Monitor.instance=this;
+        }
+        addSensor(sensor){}
+        delSensor(sensor){}
+        update(data){}
+    }
+
+    class Sensor{
+        #observadores=[];
         #id;
         constructor(id, obsevadores){
-            this.#sensors=obsevadores;
+            this.#observadores=obsevadores;
             this.#id=id
         }
         /**Getter y Setter */
@@ -21,13 +32,13 @@ const gestionSensores=(function(){
             }
             this.#id=value;
         }
-        get sensors(){
-            this.#sensors.forEach(element => {
+        get observadores(){
+            this.#observadores.forEach(element => {
                 document.writeln+=(`${element} <br>`);
             });
         }
-        set sensors(value){
-            this.#sensors.push(`${value}`);
+        set observadores(value){
+            this.#observadores.push(`${value}`);
         }
         /**Metodos */
 
@@ -54,5 +65,44 @@ const gestionSensores=(function(){
         }
 
 
+    }
+    class DigitalSensor extends Sensor{
+        #tipo='Digital'
+        constructor(tipo){
+            super.observadores
+            super.id
+            this.#tipo=tipo
+        }
+        lectura(){
+            const min=20, max=30;
+            tempAle=Math.floor(Math.random() * (max - min + 1)) + min;//Crear una temperatura entre el min y el max
+            observadores.forEach
+            return `Monitor recibio datos: Sensor ${id}, Tipo: ${tipo}, Valor: ${tempAle}`
+        }
+    }
+    class AnalogSensor extends Sensor{
+        #tipo='Analogico'
+        constructor(tipo){
+            super.observadores
+            super.id
+            this.#tipo=tipo
+        }
+        lectura(){
+            const min=20, max=30;
+            tempAle=Math.floor(Math.random() * (max - min + 1)) + min;//Crear una temperatura entre el min y el max
+            return `Monitor recibio datos: Sensor ${id}, Tipo: ${tipo}, Valor: ${tempAle}`
+        }
+
+    }
+    class SensorFactory {
+        static crearSensor(tipo,id){
+            tipo=tipo.toUpperCase();
+            if(tipo==='DIGITAL'||tipo==='ANALOGICO'){
+                return Sensor.instance(tipo, id)
+            }else{
+                return `el tipo no es correcto, prueba con 'digital' o 'analogico'`
+            }
+            
+        }
     }
 })();
