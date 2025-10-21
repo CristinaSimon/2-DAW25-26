@@ -1,6 +1,6 @@
 <?php session_start() ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,6 +10,7 @@
 </head>
 <body>
 <?php
+/*Realizar un ejercicio de loging con el array asociativo que te redirija al ejercicio de noticias y subida de noticias, con login y cerrar sesion (destroy_sesion) y si se cierra tienes que poder volver a logearte*/
 $usuariosValidos=['pepe'=>123456, 'sonia'=>456789, 'victor'=>123789];
  if (isset($_SESSION["usuario_valido"])){
 
