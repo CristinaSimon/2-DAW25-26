@@ -1,0 +1,166 @@
+:root {
+    --white: #ffffff;
+    --grey-bg: #2d2d2d;
+    --grey-txt: #535352;
+    --grey-btn:#363636;
+    --yellow: #fdc001;
+    --black:#000000;
+    --font-family: "Poppins", sans-serif;
+}
+/*******************************************************************/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+body{
+    font-family: var(--font-family);
+}
+/************************************************/
+/*********************BODY***************************/
+button{
+    background: var(--grey-btn);
+    border-radius: 30px;
+    height: 35px;
+    width: 160px;
+    color: var(--white);
+}
+.desplaza-y{
+    transform:translateY(40px);
+}
+.desplaza-y2{
+    transform:translateY(-40px);
+}
+
+/*********************HEADER***************************/
+header{
+    background-color: var(--yellow);
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+}
+header ul{
+    display: none;
+}
+header ul li{
+    display: flex;
+    padding-left: 10px;
+}
+.iconos{
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.logo{
+    font-weight: bold;
+    font-size: 140%;
+    /* padding: 45px; */
+    /* font-size: calc(1.5rem + 4vw); */
+    color: var(--grey-bg);
+    display: flex;
+    width: 30%;
+    /* border: 1px solid; */
+    align-items: center;
+    justify-content: center;
+  
+}
+
+.show-menu-cb {
+    display: none;
+}
+
+.show-menu-lb {
+   cursor: pointer;
+   display: flex;
+   justify-content: end;
+   align-items: center;
+   margin-right: 10px;
+    
+}
+input[type=checkbox]:checked~nav {
+    display: block;
+}
+
+/*********************MAIN***************************/
+.uno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    width: 50%;
+
+}
+
+/*********************FOOTER***************************/
+/*********** DESKTOP DESIGN *****************/
+@media screen and (min-width:640px) {
+    header ul{
+    display: flex;
+}
+header ul li{
+    display: flex;
+    padding-left: 10px;
+}
+.iconos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+}
