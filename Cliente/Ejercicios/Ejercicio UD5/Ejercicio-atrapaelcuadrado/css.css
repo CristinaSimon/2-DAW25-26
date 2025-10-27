@@ -1,4 +1,12 @@
 .cuadrado{
     height: 100px;
     width: 100px;
+    position: absolute;
+    background-color: green;
+    cursor: pointer;
+}
+.borde{
+    border: solid 2px black;
+    width: 98vw;
+    height: 98vh;
 }
