@@ -76,9 +76,9 @@ const finalizar=()=>{
 
 const compra=async()=>{
     try {
-        revisarInventario('pantalon')
-        revisarSaldo(50)
-        confimarEnvio('email@email')
+        await revisarInventario('pantalon')
+        await revisarSaldo(50)
+        await confimarEnvio('email@email')
     } catch (error) {
         console.log(error);
     }
