@@ -44,27 +44,36 @@ abstract class Figure {
     public abstract function area();
 }
 class Circle extends Figure{
+
     protected $radio;
-    function __construct($x, $y) {
+    function __construct($x, $y, $radio) {
+        parent::__construct($x, $y);/*coordenadas del centro*/
+
+        $this->radio=$radio;
 
     }
 
     function area() {
         $this->radio* M_PI;
     }
-    public function __toString(): string
-    {
-        // TODO: Implement __toString() method.
+    public function __toString(): string{
+        return "El circulo esta en el punto de inicio".$x." y ".$y.", el radio es: ".$radio."y el area del area es: ".$this->area()."<br>";
     }
 }
 
 class Rectangle extends Figure{
-    function __construct($x, $y) {
+    protected $largo;
+    protected $ancho;
+    function __construct($x, $y, $largo, $ancho) {
         parent::__construct($x, $y);
-
+        $this->largo=$largo;
+        $this->ancho=$ancho;
     }
     function area() {
-        return $x*$y;
+        return $this->ancho*$this->largo;
+    }
+    public function __toString(): string{
+        return "El rectangulo esta en el punto de inicio".$x." y ".$y.", largo y ancho es: ".$largo." y ".$ancho."y el area del area es: ".$this->area()."<br>";
     }
 }
 
