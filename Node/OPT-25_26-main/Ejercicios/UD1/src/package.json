@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "inquirer": "^12.10.0"
+  },
+  "name": "ejercicios",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "01-ejercicio-inquierer.js",
+  "devDependencies": {},
+  "scripts": {
+    "dev":"node ./src/01ejercicio-inquierer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
