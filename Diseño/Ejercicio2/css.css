@@ -1,11 +1,11 @@
 :root {
-    --white: #ffffff;
-    --grey-bg: #2d2d2d;
-    --grey-txt: #535352;
-    --grey-btn:#363636;
-    --yellow: #fdc001;
-    --black:#000000;
-    --font-family: "Poppins", sans-serif;
+  --white: #ffffff;
+  --grey-bg: #2d2d2d;
+  --grey-txt: #535352;
+  --grey-btn: #363636;
+  --yellow: #fdc001;
+  --black: #000000;
+  --font-family: "Poppins", sans-serif;
 }
 /*******************************************************************/
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -14,16 +14,15 @@
 */
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    box-sizing: border-box;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  text-decoration: none;
 }
-
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -37,138 +36,194 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-body{
-    font-family: var(--font-family);
+body {
+  font-family: var(--font-family);
 }
 /************************************************/
 /*********************BODY***************************/
-button{
-    background: var(--grey-btn);
-    border-radius: 30px;
-    height: 35px;
-    width: 160px;
-    color: var(--white);
-    margin:2px ;
-    /* display: flex; */
+button {
+  background: var(--grey-btn);
+  border-radius: 30px;
+  height: 35px;
+  width: 160px;
+  color: var(--white);
+  margin: 2px;
+  /* display: flex; */
 }
-.desplaza-y{
-    transform:translateY(40px);
+.desplaza-y {
+  transform: translateY(40px);
 }
-.desplaza-y2{
-    transform:translateY(-40px);
+.desplaza-y2 {
+  transform: translateY(-40px);
 }
-h1{
-    
+h1 {
+  font-weight: 900;
+  font-size: xx-large;
+}
+h2 {
+  font-weight: bolder;
+  font-size: x-large;
 }
 
 /*********************HEADER***************************/
-header{
-    background-color: var(--yellow);
-    height: 30px;
-    display: flex;
-    flex-direction: row;
+header {
+  background-color: var(--yellow);
+  height: 30px;
+  display: flex;
+  flex-direction: row;
 }
-header ul{
-    display: none;
+header ul {
+  display: none;
 }
-header ul li{
-    display: flex;
-    padding-left: 10px;
+header ul li {
+  display: flex;
+  padding-left: 10px;
 }
-.iconos{
-    display: none;
-    align-items: center;
-    justify-content: space-around;
+.iconos {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+}
 
-}
-
-.logo{
-    font-weight: bold;
-    font-size: 140%;
-    /* padding: 45px; */
-    /* font-size: calc(1.5rem + 4vw); */
-    color: var(--grey-bg);
-    display: flex;
-    width: 30%;
-    /* border: 1px solid; */
-    align-items: center;
-    justify-content: center;
-  
+.logo {
+  font-weight: bold;
+  font-size: 140%;
+  /* padding: 45px; */
+  /* font-size: calc(1.5rem + 4vw); */
+  color: var(--grey-bg);
+  display: flex;
+  width: 30%;
+  /* border: 1px solid; */
+  align-items: center;
+  justify-content: center;
 }
 
 .show-menu-cb {
-    display: none;
+  display: none;
 }
 
 .show-menu-lb {
-   cursor: pointer;
-   display: flex;
-   justify-content: end;
-   align-items: center;
-   margin-right: 10px;
-    
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-right: 10px;
+  transform: translateX(300px);
 }
-input[type=checkbox]:checked~nav {
-    display: block;
+input[type="checkbox"]:checked ~ nav {
+  display: block;
 }
 
 /*********************MAIN***************************/
-.uno{
+.uno {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-left: 30px;
+  width: 50%;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.uno img {
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+  /* margin-bottom: 30px; */
+}
+.dos {
+  background-color: var(--yellow);
+  color: var(--black);
+  padding: 30px;
+  text-align: center;
+  justify-items: center;
+}
+form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input {
+  border-radius: 30px;
+  justify-self: center;
+  /* width: 100%; */
+  align-items: center;
+  padding: 8px;
+}
+textarea {
+  border-radius: 30px;
+  /* text-align:center; */
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.tres{
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin: 30px;
+}
+.tres div{
+    margin: 30px;
+    display: flex;
+}
+/* .tres h3{
+    margin: 12px;
+    text-align: center;
+} */
+/* .divtres{
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
-    margin-left: 30px;
-    width: 50%;
-
-}
-.uno button{
-    flex-direction: row;
-}
-
+    width: 40%;
+} */
 /*********************FOOTER***************************/
 /*********** DESKTOP DESIGN *****************/
-@media screen and (min-width:640px) {
-    header ul{
+@media screen and (min-width: 640px) {
+  header ul {
     display: flex;
-}
-header ul li{
+  }
+  header ul li {
     display: flex;
     padding-left: 10px;
-}
-.iconos{
+  }
+  .iconos {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-}
-
+  }
+  form {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 100% 100%;
+    gap: 10px;
+    width: 40%;
+  }
 }
