@@ -105,9 +105,9 @@ header {
   display: flex;
   flex-direction: row;
 }
-header ul {
+/* header ul {
   display: none;
-}
+} */
 header ul li {
   display: flex;
   padding-left: 10px;
@@ -130,6 +130,11 @@ header ul li {
   align-items: center;
   justify-content: center;
 }
+nav {
+  display: none;
+  transform: translateX(200px);
+
+}
 
 .show-menu-cb {
   display: none;
@@ -143,8 +148,13 @@ header ul li {
   margin-right: 10px;
   transform: translateX(300px);
 }
+
 input[type="checkbox"]:checked ~ nav {
   display: block;
+}
+input[type="checkbox"]:checked ~ label {
+  transform: translateX(237px);
+
 }
 
 /*********************MAIN***************************/
@@ -246,9 +256,6 @@ textarea {
   height: 60%;
   margin: 30px;
   justify-items: center;
-
-
-
 }
 .d4contenidoDos{
   display: flex;
@@ -270,7 +277,23 @@ textarea {
   transform: translateY(20px);
 }
 .cinco{
-  
+  width: 50%;
+}
+.d5contenido{
+  background-color: var(--white);
+  width: 150px;
+  height: 150px;
+  margin: 30px;
+  justify-items: end;
+}
+
+.dimg{
+  display: flex;
+  width: 80%;  
+  height: 80%;
+  justify-content: center;
+  transform: translate(10px, 10px);
+  /* transform: translateY(10px); */
 }
 /*********************FOOTER***************************/
 /*********** DESKTOP DESIGN *****************/

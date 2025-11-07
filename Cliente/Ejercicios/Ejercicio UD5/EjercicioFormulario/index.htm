@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Jornadas</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <h1>Registro Jornadas</h1>
+
+    <form action="#" method="post" novalidate>
+        <div class="form-container">
+            <div class="columna">
+                <label for="nombre">Nombre y apellidos *</label>
+                <input type="text" id="nombre" name="nombre" placeholder=" " required>
+                
+
+                <label>Nivel de Estudios *</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="estudios" value="bajos" required> Bajos</label>
+                    <label><input type="radio" name="estudios" value="medios"> Medios</label>
+                    <label><input type="radio" name="estudios" value="altos"> Altos</label>
+                </div>
+
+                <label for="password">Password *</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder=" " required>
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <label>Tipo de jornada (1 a 3) *</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="jornada" value="ciberseguridad"> Ciberseguridad</label>
+                    <label><input type="checkbox" name="jornada" value="videojuegos"> Videojuegos</label>
+                    <label><input type="checkbox" name="jornada" value="desarrollo web"> Desarrollo Web</label>
+                    <label><input type="checkbox" name="jornada" value="big data"> Big Data</label>
+                    <label><input type="checkbox" name="jornada" value="multiplataforma"> Desarrollo Multiplataforma</label>
+                </div>
+
+                <p class="intentos">Número de intentos de envío: 0</p>
+            </div>
+
+            <div class="columna">
+                <label for="nacimiento">Año Nacimiento *</label>
+                <input type="number" id="nacimiento" name="nacimiento" placeholder=" " required min="1900" max="2025">
+
+                <label for="usuario">Usuario *</label>
+                <input type="text" id="usuario" name="usuario" placeholder=" " required>
+
+                <label for="repite">Repita Password *</label>
+                <div class="password-container">
+                    <input type="password" id="repite" name="repite" placeholder=" " required>
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <div class="condiciones">
+                    <label><input type="checkbox" name="condiciones" required> Acepto las condiciones</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="botones">
+            <button type="button" name="enviar" class="enviar" disabled>Enviar</button>
+            <button type="button" name="reestablecer" class="reset">Reestablecer</button>
+        </div>
+    </form>.
+
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfVXr8UAAAAAMS-4Ar9OHK7RLug-6H6n_qxwo1L"></script>
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
