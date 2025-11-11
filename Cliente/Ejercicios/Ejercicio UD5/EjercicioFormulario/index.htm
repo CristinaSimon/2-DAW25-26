@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Jornadas</title>
     <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/sweetalert2.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
             <div class="columna">
                 <label for="nombre">Nombre y apellidos *</label>
                 <input type="text" id="nombre" class="input" name="nombre" placeholder=" " required>
-                <label id="errName"></label>
+                <label id="errnombre"></label>
                 
 
                 <label>Nivel de Estudios *</label>
@@ -32,7 +33,7 @@
                     <input type="password" id="pass" class="input"  name="password" placeholder=" " required>
                     <i class="visor fa-solid fa-eye"></i>
                     <label id="errPass"></label>
-                    <label id="listReq"></label>
+                    <label class="listReq"></label>
                 </div>
 
                 <label>Tipo de jornada (1 a 3) *</label>
@@ -51,16 +52,18 @@
             <div class="columna">
                 <label for="nacimiento">Año Nacimiento *</label>
                 <input type="text" id="nacimiento" class="input"  name="nacimiento" placeholder=" " required min="1900" max="2025">
+                <label id="errfecha"></label>
 
                 <label for="usuario">Usuario *</label>
                 <input type="text" id="usuario" class="input"  name="usuario" placeholder=" " required>
+                <label id="errusuario"></label>
 
                 <label for="repite">Repita Password *</label>
                 <div class="password-container">
                     <input type="password"  class="input" id="rpass" name="repite" placeholder=" " required>
                     <i class="visor fa-solid fa-eye"></i>
                     <label id="errPass"></label>
-                    <label id="listReq"></label>
+                    <label class="listReq"></label>
 
                 </div>
 
@@ -78,6 +81,7 @@
 
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LfVXr8UAAAAAMS-4Ar9OHK7RLug-6H6n_qxwo1L"></script>
+    <script src="./css/sweetalert2.all.min.js"></script>
     <script type="module" src="./js/app.js"></script>
 </body>
 </html>

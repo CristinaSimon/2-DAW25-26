@@ -1,6 +1,6 @@
 "use strict"
-export const FormularioModule = (() => {
-    let form, btnResatablecer, radios, check, condiciones, btnEnviar;
+    let form, btnResatablecer, radios, check, condiciones, btnEnviar, pass, 
+    rpass, errpass, errtipo,errnombre,listReq,errortipocheck,errusuario,errfecha;
     const init = () => {
         document.addEventListener("DOMContentLoaded", () => {
             establecerObjetos();
@@ -17,6 +17,14 @@ export const FormularioModule = (() => {
         visor=document.querySelectorAll(".visor");
         pass=document.querySelector("#pass");
         rpass=document.querySelector("#rpass");
+        errpass=document.querySelector("#errpass");
+        errtipo=document.querySelector("#errtipo");
+        errnombre=document.querySelector("#errnombre");
+        listReq=document.querySelectorAll(".listReq");
+        errortipocheck=document.querySelector("#errortipocheck");
+        errusuario=document.querySelector("#errusuario");
+        errfecha=document.querySelector("#errfecha");
+
     }
     const establecerEventos = () => {
         form.addEventListener("submit", validarFormulario)
@@ -33,9 +41,12 @@ export const FormularioModule = (() => {
         });
         check.forEach(check=>{
             const contador=0;
-            check.addEventListener("change", ()=>{
+            if (contador<=3){
+                check.addEventListener("change", ()=>{
                 contador++;
             })
+            }
+            
         });
         visor.addEventListener("mousedown", mostrar);
         visor.addEventListener("mousedown", ocultar);
@@ -123,6 +134,5 @@ export const FormularioModule = (() => {
         init
     }
 
-})();
 
 FormularioModule.init();
