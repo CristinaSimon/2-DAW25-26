@@ -16,6 +16,7 @@
             <div class="columna">
                 <label for="nombre">Nombre y apellidos *</label>
                 <input type="text" id="nombre" class="input" name="nombre" placeholder=" " required>
+                <label id="errName"></label>
                 
 
                 <label>Nivel de Estudios *</label>
@@ -29,7 +30,9 @@
                 <label for="password">Password *</label>
                 <div class="password-container">
                     <input type="password" id="pass" class="input"  name="password" placeholder=" " required>
-                    <i class="fa-solid fa-eye"></i>
+                    <i class="visor fa-solid fa-eye"></i>
+                    <label id="errPass"></label>
+                    <label id="listReq"></label>
                 </div>
 
                 <label>Tipo de jornada (1 a 3) *</label>
@@ -55,7 +58,10 @@
                 <label for="repite">Repita Password *</label>
                 <div class="password-container">
                     <input type="password"  class="input" id="rpass" name="repite" placeholder=" " required>
-                    <i class="fa-solid fa-eye"></i>
+                    <i class="visor fa-solid fa-eye"></i>
+                    <label id="errPass"></label>
+                    <label id="listReq"></label>
+
                 </div>
 
                 <div class="condiciones">

@@ -14,6 +14,9 @@ export const FormularioModule = (() => {
         btnEnviar = document.querySelector("#enviar");
         check = document.querySelectorAll(".check");
         condiciones = querySelectorAll(".condi");
+        visor=document.querySelectorAll(".visor");
+        pass=document.querySelector("#pass");
+        rpass=document.querySelector("#rpass");
     }
     const establecerEventos = () => {
         form.addEventListener("submit", validarFormulario)
@@ -33,12 +36,26 @@ export const FormularioModule = (() => {
             check.addEventListener("change", ()=>{
                 contador++;
             })
-        })
-
-
+        });
+        visor.addEventListener("mousedown", mostrar);
+        visor.addEventListener("mousedown", ocultar);
     }
-    const validarFormulario = () => {
-        console.log('Validar formulario');
+    const mostrar=()=>{
+        pass.addEventListener("input", ()=>{
+            pass.type='text';
+        });
+        rpass.addEventListener("input", ()=>{
+            rpass.type='text';
+        });
+        
+    }
+    const ocultar=()=>{
+        pass.addEventListener("input", ()=>{
+            pass.type='password';
+        });
+        rpass.addEventListener("input", ()=>{
+            rpass.type='password';
+        });
     }
     const resetFormulario = () => {
         document.querySelectorAll(".input").forEach(objeto => {
