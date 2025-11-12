@@ -13,9 +13,7 @@ private array $person =[];
     public function deletePerson($nombre): void
     {
         foreach ($this->person as $key => $pd) {
-            if ($pd == $nombre) {
-                unset($this->person[$key]);
-            }
+            array_splice($this->person, array_s, 1);
         }
     }
     public function __toString(){

@@ -277,19 +277,22 @@ textarea {
   transform: translateY(20px);
 }
 .cinco{
-  width: 50%;
+  /* width: 50%; */
+  text-align:start;
+  width: 100%;
+  justify-self: start;
 }
 .d5contenido{
   background-color: var(--white);
-  width: 150px;
+  width: 60%;
   height: 150px;
   margin: 30px;
-  justify-items: end;
+  /* justify-items: start; */
 }
 
 .dimg{
   display: flex;
-  width: 80%;  
+  width: 100%;  
   height: 80%;
   justify-content: center;
   transform: translate(10px, 10px);

@@ -1,5 +1,5 @@
 "use strict"
-
+let form, nombre;
 const init = () => {
     document.addEventListener("DOMContentLoaded", () => {
         establecerObjetos();
@@ -17,5 +17,7 @@ const establecerEventos = () => {
 // ------------------ funciones
 
 const cambionombre=()=>{
-
+    nombre.value=`${nombre.value.toLocaleUpperCase()}`;
 }
+
+init();
