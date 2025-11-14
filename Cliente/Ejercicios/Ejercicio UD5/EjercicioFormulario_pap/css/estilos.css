@@ -63,7 +63,6 @@ input:valid:not(:placeholder-shown) {
     border-color: #2ecc71;
     box-shadow: 0 0 4px rgba(46, 204, 113, 0.3);
 }
-
 input:invalid:not(:focus):not(:placeholder-shown) {
     border-color: #e74c3c;
     box-shadow: 0 0 4px rgba(231, 76, 60, 0.3);

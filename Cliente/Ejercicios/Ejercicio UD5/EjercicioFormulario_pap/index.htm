@@ -15,48 +15,53 @@
 
     <form action="#" method="post" id="registro" novalidate>
         <div class="form-container">
-            <div class="columna">
-                <label for="nombre">Nombre y apellidos *</label>
+            <div>
+                <h4>Nombre y apellidos *</h4>
                 <input type="text" id="nombre" class="input" name="nombre" placeholder=" " required />
-                <label id="errnombre"></label>
- 
-                <label for="nacimiento">Año Nacimiento *</label>
+                <span id="errnombre"></span>
+            </div><br>
+
+            <div>
+                <h4>Año Nacimiento *</h4>
                 <input type="text" id="nacimiento" class="input" name="nacimiento" placeholder=" " required min="1900"
                     max="2025" />
-                <!-- <label id="errfecha"></label> -->
-<!--
-                <label for="usuario">Usuario *</label>
+                <span id="errfecha"></span>
+            </div><br>
+
+            <div>
+                <h4>Usuario *</h4>
                 <input type="text" id="usuario" class="input" name="usuario" placeholder=" " required />
-                <label id="errusuario"></label>
+                <span id="errusuario"></span>
+            </div><br>
 
-                <label>Nivel de Estudios *</label>
-                <div class="radio-group">
-                    <label><input type="radio" class="radios" name="estudios" value="bajos" required />
-                        Bajos</label>
-                    <label><input type="radio" class="radios" name="estudios" value="medios" />
-                        Medios</label>
-                    <label><input type="radio" class="radios" name="estudios" value="altos" />
-                        Altos</label>
-                    <label id="errortipo"></label>
-                </div>
 
-                <label for="password">Password *</label>
-                <div class="password-container">
-                    <input type="password" id="pass" class="input" name="password" placeholder=" " required />
-                    <i class="visor fa-solid fa-eye"></i>
-                    <label id="errPass"></label>
-                    <label class="listReq"></label>
-                </div>
-                <label for="repite">Repita Password *</label>
-                <div class="password-container">
-                    <input type="password" class="input" id="rpass" name="repite" placeholder=" " required />
-                    <i class="visor fa-solid fa-eye"></i>
-                    <label id="errPass"></label>
-                    <label class="listReq"></label>
-                </div>
+            <div class="radio-group">
+                <h4>Nivel de Estudios *</h4>
+                <label><input type="radio" class="radios" name="estudios" value="bajos" required /> Bajos </label>
+                <label><input type="radio" class="radios" name="estudios" value="medios" /> Medios</label>
+                <label><input type="radio" class="radios" name="estudios" value="altos" /> Altos</label>
+                <span id="errortipo"></span>
+            </div><br>
 
-                <label>Tipo de jornada (1 a 3) *</label>
+
+            <div class="password-container">
+                <h4>Password *</h4>
+                <input type="text" id="pass" class="input" name="password" placeholder=" " required />
+                <i class="visor fa-solid fa-eye"></i>
+                <span id="errPass"></span>
+                <span id="listReq"></span>
+            </div><br>
+
+            <div class="password-container">
+                <h4>Repita Password *</h4>
+                <input type="password" class="input" id="rpass" name="repite" placeholder=" " required />
+                <i class="visor fa-solid fa-eye"></i>
+                <span id="errRPass"></span>
+            </div>
+            <!--                
+                
                 <div class="checkbox-group">
+                    <h4>Tipo de jornada (1 a 3) *</h4>
                     <label><input type="checkbox" class="check" name="jornada" value="ciberseguridad" />
                         Ciberseguridad</label>
                     <label><input type="checkbox" class="check" name="jornada" value="videojuegos" />
@@ -67,20 +72,21 @@
                         Big Data</label>
                     <label><input type="checkbox" class="check" name="jornada" value="multiplataforma" />
                         Desarrollo Multiplataforma</label>
-                    <label id="errortipocheck"></label>
+                    <span id="errortipocheck"></span>
                 </div>
             </div>
                 <label><input type="checkbox" class="condi" name="condiciones" required />
                     Acepto las condiciones</label>
-        </div>
 
-        <p class="intentos">Número de intentos de envío: 0</p>
+        <p class="intentos">Número de intentos de envío: </p><span></span>
 
         <button type="button" id="enviar" class="enviar" disabled>Enviar</button>
         <button type="button" id="reestablecer" class="reset">
             Reestablecer
         </button> -->
     </form>
+    <!-- campo oculto -->
+    <input type="hidden" name="captcha" id="captcha">
 
     <script src="https://www.google.com/recaptcha/api.js?render=6LfVXr8UAAAAAMS-4Ar9OHK7RLug-6H6n_qxwo1L"></script>
     <script src="./css/sweetalert2.all.min.js"></script>
