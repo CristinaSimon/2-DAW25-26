@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejemplo de prueba de evaluación iniial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="ejemplo_prueba_ev_inicial.css">
 </head>
 
@@ -12,19 +15,33 @@
     <header class="header-container">
 
 
-        <div>Logo</div>
+        <div class="logo">
+            <p>Klean</p>
+
+        </div>
         <div class="top-bar">
             <div class="top-bar-contact">
-                <div>tlf</div>
-                <div>correo</div>
+                <div class="top-bar-phone"><i class="fa-solid fa-phone"></i><a href="https://wa.me/+34 123 123">+34 123
+                        123</a></div>
+                <hr class="linea-vertical">
+                <div class="top-bar-email"><i class="fa-solid fa-envelope"></i><a
+                        href="mailto:info@diw.com">info@diw.com</a></div>
             </div>
-            <div class="top-bar-social-links">social links</div>
+            <div class="top-bar-social-links">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
         </div>
         <input type="checkbox" id="menu-toggle" class="show-menu-cb" />
-        <label class="show-menu-lb" for="menu-toggle">Menu</label>
+        <label class="menu-btn" for="menu-toggle">
+            <span></span>
+        </label>
         <nav class="nav-menu">
             <ul class="menu">
-                <li><a href="#">Home</a></li>
+                <li><a id="menu-home" href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Service</a></li>
                 <li><a href="#">Project</a></li>
@@ -37,51 +54,61 @@
     </header>
     <main class="main-container">
         <section class="seccion-1">
-            <div class="section-1-punto">punto</div>
-            <div>
-                <p>CLEANING SERVICES</p>
-                <P>BEST QUALITY SOUTICION IN CLEANING</P>
-                <button>Get a Quote</button>
+
+            <div class="section-1-punto">
+                <div class="circulo"></div>
             </div>
+            <div class="section-1-content">
+                <div>
+                    <p>CLEANING SERVICES</p>
+                    <P>BEST QUALITY SOUTICION IN CLEANING</P>
+                    <button>Get a Quote</button>
+                </div>
+
+            </div>
+
+
         </section>
         <section class="section-contact-info">
             <div class="info-element info-element-yellow">
-                <div>icono</div>
+                <div><i class="fa-solid fa-phone"></i></div>
                 <div>
                     <p>parrafo1</p>
                     <p>parrafo2</p>
                 </div>
             </div>
             <div class="info-element info-element-green">
-                 <div>icono</div>
+                <div><i class="fa-solid fa-envelope-open"></i></div>
+                <div>
+                    <p>Email us</p>
+                    <p>info@example.com</p>
+                </div>
+            </div>
+            <div class="info-element info-element-yellow">
+                <div><i class="fa-solid fa-location-dot"></i></div>
                 <div>
                     <p>parrafo1</p>
                     <p>parrafo2</p>
                 </div>
             </div>
-            <div class="info-element info-element-yellow"> <div>icono</div>
-                <div>
-                    <p>parrafo1</p>
-                    <p>parrafo2</p>
-                </div></div>
         </section>
     </main>
     <footer class="footer-container">
 
         <div class="foot-info-1">
             <p>Get in touch</p>
-            <p>p1</p>
-            <p>p2</p>
-            <p>p3</p>
+            <p><i class="fa-solid fa-location-dot"></i>p1</p>
+            <p><i class="fa-solid fa-phone"></i>p2</p>
+            <p><i class="fa-solid fa-envelope"></i>p3</p>
         </div>
         <div class="foot-info-1">
             <p>Quick links</p>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Our Services</li>
-                <li>Our Projects</li>
-                
+                <li><i class="fa-solid fa-angle-right"></i>Home</li>
+                <li><i class="fa-solid fa-angle-right"></i>About</li>
+                <li><i class="fa-solid fa-angle-right"></i>Our Services</li>
+                <li><i class="fa-solid fa-angle-right"></i>Our Projects</li>
+
             </ul>
         </div>
 
