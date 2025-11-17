@@ -3,10 +3,12 @@
     --background-header: #868b9c;
     --background-submenu: #939393;
     --grey: #85888C;
+    --black: #000000;
     --yellow: #FFE468;
-    --verde-fluor: rgb(100, 190, 100);
+    --verde-fluor: #23a016;
     --footer-background: #008B8B;
     --resaltado: red;
+    --font-family-sans-serif: "Poppins", sans-serif;
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -68,14 +70,31 @@ table {
     border-spacing: 0;
 }
 
+
+body {
+    font-family: var(--font-family-sans-serif);
+}
+
 /*****************/
 /************ HEADER *************/
 .header-container {
-    background-color: var(--background-header);
+
     display: grid;
-    grid-template-columns: 50px auto;
+    grid-template-columns: minmax(200px, 400px) auto;
     grid-template-rows: auto 1fr;
 
+
+}
+
+.logo {
+
+    font-weight: bold;
+    font-size: calc(1.5rem + 4vw);
+    color: var(--yellow);
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: start;
 
 }
 
@@ -87,22 +106,105 @@ table {
     display: none;
 }
 
-.show-menu-lb {
+/* .show-menu-lb {
     cursor: pointer;
-    text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 10px;
+
+} */
+
+/*
+hamburguer btn
+*/
+
+
+#menu-toggle {
+    display: none;
 }
 
-nav {
+#menu-toggle:checked+.menu-btn>span {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked+.menu-btn>span::before {
+    top: 0;
+    transform: rotate(0deg);
+} 
+
+#menu-toggle:checked+.menu-btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.menu-btn {
+    position: fixed;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+    right: 20px;
+    top: 20px
+}
+
+
+.menu-btn>span,
+.menu-btn>span::before,
+.menu-btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: var(--yellow);
+    transition-duration: .25s;
+}
+
+.menu-btn>span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu-btn>span::after {
+    content: '';
+    top: 8px;
+}
+
+
+.nav-menu {
     display: none;
+    text-align: left;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: var(--white);
+}
+
+.nav-menu a {
+    color: var(--black);
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.nav-menu li {
+    padding: 10px;
+}
+
+
+.nav-menu a:hover {
+    color: var(--verde-fluor);
+}
+
+#menu-home {
+    color: var(--verde-fluor);
 }
 
 input[type=checkbox]:checked~nav {
     display: block;
 }
 
-.nav-menu {
-    text-align: center;
-}
+
 
 
 /******** MAIN *****************/
@@ -111,11 +213,104 @@ input[type=checkbox]:checked~nav {
 }
 
 .seccion-1 {
+    position: relative;
+    height: 500px;
+    background-image: url("./img/portfolio-2.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
+
+.seccion-1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /*
+    inset: 0;
+  o su equivalente:
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+*/
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.seccion-1>* {
+
+    z-index: 1;
+    /* encima del ::before */
+}
+
 
 .section-1-punto {
     width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.circulo {
+    background-color: var(--verde-fluor);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 20px;
+    animation: parpadeo-tamano 0.5s infinite alternate;
+}
+
+
+@keyframes parpadeo-tamano {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        /* tamaño normal */
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.5);
+        /* crece */
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        /* vuelve al tamaño original */
+    }
+}
+
+
+@keyframes agrandar {
+    from {
+        transform: scale(1);
+        /* tamaño original */
+    }
+
+    to {
+        transform: scale(1.5);
+        /* agranda 50% */
+    }
+}
+
+.section-1-content {
+    display: flex;
+    align-items: center;
+}
+
+.section-1-content p {
+    margin-block: 30px;
+}
+
+.section-1-content button {
+    background-color: var(--yellow);
+    padding: 8px;
+    border-radius: 20px;
+
 }
 
 .section-contact-info {
@@ -161,36 +356,96 @@ input[type=checkbox]:checked~nav {
 }
 
 
-
 /*********** DESKTOP DESIGN *****************/
-@media screen and (min-width:600px) {
+@media screen and (min-width:640px) {
+
+    input[type=checkbox]:checked~nav {
+        display: flex;
+    }
 
     /************HEADER****************/
+    .logo {
+        background-color: var(--verde-fluor);
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
     .top-bar {
         display: flex;
         text-align: end;
         justify-content: space-between;
+        background-color: var(--black);
+        color: var(--white);
+        padding-inline: 20px;
+
+        font-size: small;
 
     }
+
+    .top-bar-phone {
+        margin-right: 10px;
+        padding-block: 10px;
+
+    }
+
+    .top-bar-email {
+        margin-left: 10px;
+        padding-block: 10px;
+
+    }
+
+    .linea-vertical {
+        width: 1px;
+        background-color: var(--yellow);
+    }
+
+    .top-bar i {
+        color: var(--yellow);
+        margin-right: 5px;
+    }
+
+    .top-bar a {
+        color: var(--white);
+    }
+
 
     .top-bar-contact {
         display: flex;
-
     }
 
-    .show-menu-lb {
+    .top-bar-social-links {
+        padding-block: 10px;
+    }
+
+    /* .show-menu-lb {
+        display: none;
+    } */
+
+    .menu-btn {
         display: none;
     }
 
+
     .nav-menu {
         display: flex;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        justify-content: right;
+        padding-block: 10px;
     }
 
     .menu {
         display: flex;
         align-items: center;
     }
-
 
 
     /************* MAIN**************/
@@ -208,4 +463,11 @@ input[type=checkbox]:checked~nav {
     }
 
 
+}
+
+@media screen and (min-width:1000px) {
+    .logo {
+        font-size: 66px;
+        transition: font-size 0.5s linear;
+    }
 }
