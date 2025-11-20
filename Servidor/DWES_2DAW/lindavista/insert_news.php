@@ -70,6 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </li>
         </ul>
         <a href="">[ Insertar otra noticia ]</a>
-    <?php endif; ?>
+
+    <?php endif;
+    echo " <br>[<a href=index.php>index</a>]";
+    ?>
     </body>
     </html>
