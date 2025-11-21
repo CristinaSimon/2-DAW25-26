@@ -1,0 +1,123 @@
+/* Estilo del Título (h2) */
+h2 {
+    background: #c1bfbf;
+    border-radius: 8px;
+    color: #164a20;
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 22px;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #ccc;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el formulario */
+label {
+    color: #555555;
+    font-family: Calibri, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+    display: inline-block;
+    width: 100px;
+}
+
+input[type="number"] {
+    height: 30px;
+    width: 220px;
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+    box-shadow: 0px 1px 3px #ccc inset, 0 1px 4px #eee;
+    border-radius: 4px;
+    color: #333;
+    font-size: 14px;
+    transition: box-shadow 0.25s;
+}
+
+input[type="number"]:focus {
+    border-color: #888;
+    box-shadow: 0px 0px 5px #888;
+}
+
+/* Ajustes de estilo en el botón */
+button {
+    padding: 10px 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #333;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 15px auto;  /* Centra el botón y añade espacio respecto al formulario */
+    display: block;
+}
+
+button:hover {
+    background-color: #bbb;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #aaa;
+    transform: scale(0.98);
+}
+
+/* Estilo para la tabla del tablero */
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #333;
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+td:hover {
+    transform: scale(1.05);
+}
+
+.barco {
+    background-image: url('../imagenes/barco.jpg');
+}
+
+.agua {
+    background-image: url('../imagenes/agua.jpg');
+}
+
+/* Contenedor del tablero y el botón */
+#juego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Tablero centrado y con espacio respecto al botón */
+#tablero {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Mensaje de error */
+span {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Estilos para div */
+div {
+    padding-bottom: 10px;
+}
