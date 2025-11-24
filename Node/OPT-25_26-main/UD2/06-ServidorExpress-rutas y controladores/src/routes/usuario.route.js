@@ -1,5 +1,5 @@
 "use strict"
-import {Router} from 'express'
+import{ Router } from 'express'
 import { getUsuarios, getUsuario, addUsuarios,updateUsuarios, patchUsuarios,detUsuarios } from '../controler/usuario.controler.js';
 
 const router = Router(); // permitir definir las rutas

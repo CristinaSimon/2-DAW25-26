@@ -1,8 +1,8 @@
 "use strict"
 //importar el modulo http de js
 import express from "express";
-import {config} from "dotenv";
-import {routerUsuarios} from "./routes/usuario.route.js";
+import { config } from "dotenv";
+import { routerUsuarios } from "./routes/usuario.route.js";
 
 config();
 const PORT =process.env.PORT || 3000;

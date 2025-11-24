@@ -59,8 +59,80 @@ export const addUsuarios = (req,  res) => {
     });
   }
 };
-export const updateUsuarios = (req,  res) => {};
-export const patchUsuarios = (req,  res) => {};
+export const updateUsuarios = (req,  res) => {
+  const { id } = req.params;
+// console.log(req.body);
+  const {nombre, email, edad } = req.body;
+  if(!id){
+    return res.status(400).json({
+      message:'El id es requerido en la url'
+    })
+  } 
+  if (isNaN(id)) {
+    return res.status(400).json({
+      message: "el id debe ser numerico",
+    });
+  }
+  if (
+    nombre.length == 0 ||
+    email.length == 0 ||
+    edad.length == 0
+  ) {
+    return res.status(400).json({
+      message: "los campos no pueden estar vacios",
+    });
+  }
+ 
+  const idExist = usuarios.findIndex((user) => user.id == id);
+  if (idExist) {
+    // usuarios[idExist]=req.body
+    usuarios[idExist]={
+      id,
+      nombre,
+      email,
+      edad
+    }
+    return res.status(200).json({
+      message: `Actualizaxion del id ${id} ha sido correcta`,
+      data: usuarios[idExist]
+    })
+  }
+
+};
+export const patchUsuarios = (req,  res) => {
+  const { id } = req.params;
+// console.log(req.body);
+  const { email }= req.body;
+  if(!id){
+    return res.status(400).json({
+      message:'El id es requerido en la url'
+    })
+  } 
+  if (isNaN(id)) {
+    return res.status(400).json({
+      message: "el id debe ser numerico",
+    });
+  }
+  if (
+    nombre.length == 0 ||
+    email.length == 0 ||
+    edad.length == 0
+  ) {
+    return res.status(400).json({
+      message: "los campos no pueden estar vacios",
+    });
+  }
+ 
+  const idExist = usuarios.findIndex((user) => user.id == id);
+  if (idExist) {
+    // usuarios[idExist]=req.body
+    usuarios[idExist].email= email
+    return res.status(200).json({
+      message: `Actualizaxion del email del id ${id} ha sido correcta`,
+      data: usuarios[idExist]
+    })
+  }
+};
 export const detUsuarios = (req,  res) => {
   const { id } = req.params;
   if (isNaN(id)) {
