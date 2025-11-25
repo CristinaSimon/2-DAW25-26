@@ -89,7 +89,10 @@ const finMensaje = (tc) => {
         tabla.remove();
         const formm=document.querySelector("form");
         formm.classList.add("block");
-
+        document.querySelector("input").value="";
+        arr_Barcos = []
+        cliBarcos=0
+        cliAgua=0
       Swal.fire({
         icon: "success",
       });

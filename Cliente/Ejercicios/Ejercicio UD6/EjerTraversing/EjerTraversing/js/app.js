@@ -8,8 +8,7 @@ const GaleriaMusical = (() => {
      */
     const init = () => {
         document.addEventListener('DOMContentLoaded', () => {
-            //establecer objetos
-            
+            //establecer objetos           
             galeria = document.querySelectorAll('.gallery');
             statusPanel = document.querySelector('#statusMessages');
             capaHeader = document.querySelector('header'); //capa header  
