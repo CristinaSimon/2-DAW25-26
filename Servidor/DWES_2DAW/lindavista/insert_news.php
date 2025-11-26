@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $imagen = '';
     }
-
+    insertatBbdd($titulo,$texto,$categoria, $imagen);
     $mostrarResultados = true;
 }
 ?>
@@ -64,8 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <a href="<?= $imagen ?>" target="_blank">
                         <img src="<?= $imagen ?>" alt="Imagen" style="height:50px">
                     </a>
-                <?php else: ?>
-                    (no hay)
                 <?php endif; ?>
             </li>
         </ul>
@@ -73,6 +71,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <?php endif;
     echo " <br>[<a href=index.php>index</a>]";
+    function insertatBbdd($titulo, $texto, $categoria, $imagen)
+    {
+        $pdo = new Connection();
+        $conn = $pdo->getPdo();
+
+        try {
+            $stm = $conn->prepare("
+            INSERT INTO noticias (titulo, texto, categoria, fecha, img)
+            VALUES (:titulo, :texto, :categoria, NOW(), :img)
+        ");
+
+            $stm->bindParam(':titulo', $titulo);
+            $stm->bindParam(':texto', $texto);
+            $stm->bindParam(':categoria', $categoria);
+            $stm->bindParam(':img', $imagen);
+
+            $stm->execute();
+
+            if ($stm->rowCount() > 0) {
+                header("Location: index.php");
+                exit();
+            }
+        } catch (PDOException $exception) {
+            echo "Error: " . $exception->getMessage();
+        }
+    }
     ?>
     </body>
     </html>
