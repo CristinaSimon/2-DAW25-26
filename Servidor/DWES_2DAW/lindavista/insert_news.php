@@ -78,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         try {
             $stm = $conn->prepare("
-            INSERT INTO noticias (titulo, texto, categoria, fecha, img)
-            VALUES (:titulo, :texto, :categoria, NOW(), :img)
+            INSERT INTO noticias (titulo, texto, categoria, fecha, imagen)
+            VALUES (:titulo, :texto, :categoria, NOW(), :imagen)
         ");
 
             $stm->bindParam(':titulo', $titulo);
