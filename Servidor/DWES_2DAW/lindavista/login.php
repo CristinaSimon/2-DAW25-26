@@ -14,7 +14,7 @@ session_start();
 <body>
 
     <?php
-    if (isset($_REQUEST['usuario']) && isset($_REQUEST['password'])) {
+    if (!empty($_REQUEST['usuario']) && !empty($_REQUEST['password'])) {
         $usuario = htmlspecialchars($_REQUEST['usuario']);
         $password = htmlspecialchars($_REQUEST['password']);
         $clave_Encriptado = md5($password);
@@ -28,6 +28,7 @@ session_start();
             if($stm->rowCount()>0){
                 $_SESSION['usuario'] = $usuario;
                header("location:index.php");
+               exit();
             }
         }catch (PDOException $exception){
             echo "Error: " . $exception->getMessage();
@@ -45,7 +46,6 @@ session_start();
         </div>
     <?php
     }
-
     ?>
 </body>
 </html>

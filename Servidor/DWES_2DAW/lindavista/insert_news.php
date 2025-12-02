@@ -1,4 +1,5 @@
 <?php
+require_once "conexion.php";
 session_start();
 $mensaje = "";
 $mostrarResultados = false;
@@ -85,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stm->bindParam(':titulo', $titulo);
             $stm->bindParam(':texto', $texto);
             $stm->bindParam(':categoria', $categoria);
-            $stm->bindParam(':img', $imagen);
+            $stm->bindParam(':imagen', $imagen);
 
             $stm->execute();
 
