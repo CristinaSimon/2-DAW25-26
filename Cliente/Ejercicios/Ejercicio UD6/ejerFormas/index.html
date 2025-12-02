@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Juego de Construcción DOM</title>
+  
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Juego de Construcción DOM</h1>
+        <p class="subtitle">Crea elementos, arrástralos. ¡Todo se guarda automáticamente!</p>
+
+        <div class="control-panel">
+            <!-- Selector de Color -->
+            <div class="panel-section">
+                <h3>Color</h3>
+                <div class="color-grid" id="colorSelector"></div>
+            </div>
+
+            <!-- Selector de Tamaño -->
+            <div class="panel-section">
+                <h3>Tamaño</h3>
+                <div class="size-buttons" id="sizeSelector"></div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="panel-section">
+                <h3>Acciones</h3>
+                <div class="action-buttons">
+                    <button class="btn btn-create" id="createBtn">
+                        ➕ Crear Elemento
+                    </button>
+                    <button class="btn btn-clear" id="clearBtn">
+                        🗑️ Limpiar Todo
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de Juego -->
+        <div class="game-area" id="gameArea">
+            <div class="counter">Elementos: <span id="counter">0</span></div>
+            <div class="empty-message" id="emptyMessage">Crea un elemento para comenzar</div>
+            
+            <!-- Zona de papelera -->
+            <div class="trash-zone" id="trashZone">
+                🗑️
+                <div class="trash-text">PAPELERA</div>
+            </div>
+        </div>
+
+        <!-- Instrucciones -->
+        <div class="instructions">
+            <h3>📖 Instrucciones</h3>
+            <ul>
+                <li>Selecciona un color y tamaño, luego haz clic en "Crear Elemento"</li>
+                <li>Arrastra un elemento a la papelera para eliminarlo</li>
+                <li>Todo se guarda automáticamente en tu navegador</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "yggdrasilsalas",
+  "version": "1.0.0",
+  "description": "app pata gestionar las salas de la sede de yggdrasil",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.js"
+  },
+  "author": "cristina_simon",
+  "license": "ISC",
+
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}
