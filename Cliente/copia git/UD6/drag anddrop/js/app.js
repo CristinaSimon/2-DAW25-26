@@ -112,19 +112,11 @@ const DragAndDropDemo = (() => {
             nuevoElemento.setAttribute("data-copy", "false"); //cambiar el atributo data-copy a false
             nuevoElemento.querySelector(".copy-label").textContent = ""; //quitar la etiqueta de copia
             addElemento(zona, nuevoElemento)
-
-
-
         } else {
             addElemento(zona, elemento)
-
-
-
         }
      
         e.target.classList.remove('drag-over'); //quitar clase
-
-
 
     }
     /**
