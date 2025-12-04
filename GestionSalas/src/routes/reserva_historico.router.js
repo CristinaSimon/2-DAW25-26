@@ -1,15 +1,15 @@
 import { Router } from "express";
 import { bd } from "../bbdd/bbdd.js";
-import { getHistoricos, getHistorico, addHistoricos,updateHistoricos, patchHistoricos,detHistoricos } from '../controler/reserva_historico.controler.js';
+import { getHistoricos, getHistorico, addHistoricos, updateHistoricos, patchHistoricos, delHistoricos } from '../controler/reserva_historico.controler.js';
 const router = Router();
 
-router.get("/historico/nuevo", "metodos para añadir un nuevo historico");
-router.get("/historico","metodo para ver las historico");
-router.post("/historico","metodo para añadir historico");
-router.put("/historico","metodo para actualizar las historico");
-router.patch("/historico","metodo para modificar las historico");
-router.delete("/historico","metodo para el historico");
+router.get("/historico/nuevo", getHistoricos);
+router.get("/historico", getHistorico);
+router.post("/historico", addHistoricos);
+router.put("/historico", updateHistoricos);
+router.patch("/historico", patchHistoricos);
+router.delete("/historico", delHistoricos);
 
 
 
-export {router as routerHistorico};
+export { router as routerHistorico };

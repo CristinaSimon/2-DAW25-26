@@ -1,12 +1,13 @@
 "use strict"
 import express from "express";
 import { config } from "dotenv";
-import { routerReservas } from "./routes/reservas.router.js";
-import { routerSalas } from "./routes/salas.router.js";
-import { routerEncargados } from "./routes/encargados.router.js";
-import { routerHistorico } from "./routes/reserva_historico.router.js";
-import { routerActividades } from "./routes/actividades.router.js";
-import { generarSemanal, borradoMensual } from "./bbdd/bbdd.js";
+import { cargarOpciones } from "./funcionalidad.js"
+import { routerReservas } from "../src/routes/reservas.router.js";
+import { routerSalas } from "../src/routes/salas.router.js";
+import { routerEncargados } from "../src/routes/encargados.router.js";
+import { routerHistorico } from "../src/routes/reserva_historico.router.js";
+import { routerActividades } from "../src/routes/actividades.router.js";
+import { generarSemanal, borradoMensual } from "../src/bbdd/bbdd.js";
 
 config();
 const PORT =process.env.PORT || 3000;
