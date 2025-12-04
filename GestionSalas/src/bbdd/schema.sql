@@ -1,23 +1,20 @@
-CREATE TABLE IF NOT EXISTS salas (...);
-CREATE TABLE IF NOT EXISTS encargados (...);
-CREATE TABLE IF NOT EXISTS actividades (...);
-CREATE TABLE IF NOT EXISTS reservas (...);
-CREATE TABLE IF NOT EXISTS reservas_historico (...);
-
-CREATE TABLE salas (
+CREATE TABLE IF NOT EXISTS salas (
     id_sala INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL
 );
-CREATE TABLE encargados (
+
+CREATE TABLE IF NOT EXISTS encargados (
     id_encargado INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL
 );
-CREATE TABLE actividades (
+
+CREATE TABLE IF NOT EXISTS actividades (
     id_actividad INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
     descripcion TEXT
 );
-CREATE TABLE reservas (
+
+CREATE TABLE IF NOT EXISTS reservas (
     id_reserva INTEGER PRIMARY KEY AUTOINCREMENT,
     id_sala INTEGER NOT NULL,
     id_actividad INTEGER,
@@ -27,12 +24,12 @@ CREATE TABLE reservas (
     repetir_semana INTEGER DEFAULT 0,
     fecha_fin_repeticion DATE,
     fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-
     FOREIGN KEY(id_sala) REFERENCES salas(id_sala),
     FOREIGN KEY(id_actividad) REFERENCES actividades(id_actividad),
     FOREIGN KEY(id_encargado) REFERENCES encargados(id_encargado)
 );
-CREATE TABLE reservas_historico (
+
+CREATE TABLE IF NOT EXISTS reservas_historico (
     id_historico INTEGER PRIMARY KEY AUTOINCREMENT,
     id_reserva_original INTEGER,
     id_sala INTEGER,

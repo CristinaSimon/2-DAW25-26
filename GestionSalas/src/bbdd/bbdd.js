@@ -22,26 +22,45 @@ function crearReserva(data) {
     });
   });
 }
-function generarSemanal() {
+export function generarSemanal() {
   const sql = `SELECT * FROM reservas WHERE repetir_semana = 1`;
 
   db.all(sql, [], (err, reservas) => {
-    if (err) return console.error(err);
+    if (err) return console.error("Error leyendo reservas:", err);
 
     reservas.forEach(r => {
-      const fecha = new Date(r.fecha);
+      let fecha = new Date(r.fecha);
+
+      // Si no hay dia_semana, usamos el día de la fecha original
+      const targetDay = r.dia_semana !== null && r.dia_semana !== undefined
+                        ? r.dia_semana
+                        : fecha.getDay();
+
+      // Avanzamos una semana hasta llegar al día de la semana correcto
       fecha.setDate(fecha.getDate() + 7);
+      while (fecha.getDay() !== targetDay) {
+        fecha.setDate(fecha.getDate() + 1);
+      }
+
+      // Comprobamos fecha_fin_repeticion
+      if (r.fecha_fin_repeticion && new Date(r.fecha_fin_repeticion) < fecha) {
+        return; // No generamos si ya pasó la fecha final
+      }
+
       const fechaNueva = fecha.toISOString().split("T")[0];
 
+      // Evitar duplicados
       db.get(
         `SELECT 1 FROM reservas WHERE id_sala = ? AND fecha = ? AND turno = ?`,
         [r.id_sala, fechaNueva, r.turno],
         (err, existe) => {
+          if (err) return console.error(err);
+
           if (!existe) {
             db.run(
               `INSERT INTO reservas
-              (id_sala, id_actividad, id_encargado, fecha, turno, repetir_semana, fecha_fin_repeticion)
-              VALUES (?, ?, ?, ?, ?, ?, ?)`,
+              (id_sala, id_actividad, id_encargado, fecha, turno, repetir_semana, dia_semana, fecha_fin_repeticion)
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
               [
                 r.id_sala,
                 r.id_actividad,
@@ -49,8 +68,13 @@ function generarSemanal() {
                 fechaNueva,
                 r.turno,
                 r.repetir_semana,
+                r.dia_semana,
                 r.fecha_fin_repeticion
-              ]
+              ],
+              err => {
+                if (err) console.error("Error insertando reserva semanal:", err);
+                else console.log(`Reserva repetida creada para ${fechaNueva}`);
+              }
             );
           }
         }
