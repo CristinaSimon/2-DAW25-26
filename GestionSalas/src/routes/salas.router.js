@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { bd } from "../bbdd/bbdd.js";
-import { getSalas, getSala, addSalas, updateSalas, patchSalas, delSalas } from '../controler/usuario.controler.js';
+import { getSalas, getSala, addSalas, updateSalas, patchSalas, delSalas } from '../controler/salas.controler.js';
 
 const router = Router();
 
