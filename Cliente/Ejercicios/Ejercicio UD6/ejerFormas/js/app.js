@@ -160,13 +160,13 @@ const juegoformas = (() => {
     const id = e.dataTransfer.getData("text/plain"); //extraemos el contenido de dataTransfer
     console.log(id);
     console.log(`este es el id: ${id}`);
-
-    [...areaJuego.children].forEach(e=>{
-      if(e.id==id){
-        console.log(`este es el e: ${e}`);
-        id.remove();
-      }
-    })
+    id.remove;
+    // [...areaJuego.children].forEach(e=>{
+    //   if(e.id==id){
+    //     console.log(`este es el e: ${e}`);
+    //     id.remove();
+    //   }
+    // })
   };
   // const eliObjPapelera = (e) => {
   //   e.preventDefault();
