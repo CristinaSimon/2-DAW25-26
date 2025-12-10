@@ -46,7 +46,15 @@ export const getActividad = async (req, res) => {
     }
  };
 
-export const addActividades = (req, res) => { };
+export const addActividades =async (req, res) => { 
+         const db = await abrirBD();
+         try {
+            
+         } catch (error) {
+            
+         }
+
+};
 
 export const updateActividades = (req, res) => { };
 
