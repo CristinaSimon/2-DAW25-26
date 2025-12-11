@@ -49,7 +49,7 @@ export const addUsuarios = (req,  res) => {
   const emailExist = usuarios.find((user) => user.email == email);
   if (emailExist) {
     return res.status(400).json({
-      message: "Ya exiiste un usuario con ese email",
+      message: "Ya existe un usuario con ese email",
     });
   } else {
     usuarios.push(req.body);
