@@ -10,7 +10,6 @@ import cors from 'cors'
 
 config();
 const PORT =process.env.PORT || 3000;
-console.log(PORT);
 const optCors={
     methods: ['GET', 'POST'],
     allowedHeadrts: ['Content-Type', 'Authorization']
