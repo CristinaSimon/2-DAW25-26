@@ -29,16 +29,15 @@ CREATE TABLE IF NOT EXISTS reservas (
     FOREIGN KEY(id_encargado) REFERENCES encargados(id_encargado)
 );
 
+
 CREATE TABLE IF NOT EXISTS reservas_historico (
-    id_historico INTEGER PRIMARY KEY AUTOINCREMENT,
-    id_reserva_original INTEGER,
-    id_sala INTEGER,
-    id_actividad INTEGER,
-    id_encargado INTEGER,
-    fecha DATE,
-    turno TEXT,
-    repetir_semana INTEGER,
-    fecha_fin_repeticion DATE,
-    fecha_creacion DATETIME,
-    fecha_borrado DATETIME DEFAULT CURRENT_TIMESTAMP
+  sala TEXT NOT NULL,
+  actividad TEXT,
+  encargado TEXT NOT NULL,
+  fecha DATE NOT NULL,
+  turno TEXT NOT NULL,
+  dia_semana INTEGER,
+  fecha_archivo DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+  UNIQUE (sala, encargado, fecha, turno)
 );

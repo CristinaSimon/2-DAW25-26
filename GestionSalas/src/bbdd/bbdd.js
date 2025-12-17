@@ -80,30 +80,8 @@ export function generarSemanal() {
   });
 }
 
-function borradoMensual(diaLimpieza = 5) {
-  const hoy = new Date();
-  const dia = hoy.getDate();
-
-  if (dia !== diaLimpieza) return;
-
-  const copiar = `
-    INSERT INTO reservas_historico
-    (id_reserva_original, id_sala, id_actividad, id_encargado, fecha, turno,
-     repetir_semana, fecha_fin_repeticion, fecha_creacion)
-    SELECT id_reserva, id_sala, id_actividad, id_encargado, fecha, turno,
-           repetir_semana, fecha_fin_repeticion, fecha_creacion
-    FROM reservas
-  `;
-
-  bd.run(copiar, (err) => {
-    if (err) return console.error(err);
-
-    bd.run(`DELETE FROM reservas`);
-  });
-}
 
 export {
   bd,
-  crearReserva,
-  borradoMensual
+  crearReserva
 };

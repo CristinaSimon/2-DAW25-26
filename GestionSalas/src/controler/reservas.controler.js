@@ -51,6 +51,19 @@ export const addReservas = async (req, res) => {
     }
 };
 
-export const delReservas = (req, res) => { 
+export const delReservas = async (req, res) => { 
+        await abrirBD();
+    try {
+        const insReserHis = await db.all('INSERT OR IGNORE INTO reservas_historico ( sala,actividad, encargado, fecha, turno, dia_semana) SELECT s.nombre,a.nombre, e.nombre, r.fecha, r.turno, r.dia_semana FROM reservas r JOIN salas s ON r.id_sala = s.id_sala LEFT JOIN actividades a ON r.id_actividad = a.id_actividad JOIN encargados e ON r.id_encargado = e.id_encargado;');
+        const resetReservas= await db.all('DELETE FROM reservas')
+        res.status(200).json(reservas); // enviar datos al cliente
+
+    } catch (err) {
+        console.error('Error consultando la base de datos:', err);
+        res.status(500).json({ error: 'Error consultando la base de datos' });
+    } finally {
+        await db.close();
+    }
+
     
 };
