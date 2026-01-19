@@ -1,0 +1,35 @@
+// Custom.scss
+// Opción A: Incluir todo Bootstrap
+:root {
+  --verde-pag: #47e46c;
+}
+// Incluye cualquier sobrescritura de variable predeterminada aquí (aunque las funciones no estarán disponibles)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url(../css/custom.css);
+
+// Luego agrega código personalizado adicional aquí
+
+.bg-verde {
+  background-color: var(--verde-pag);
+  // background-color: #47e46c;
+}
+.text-verde {
+  color: var(--verde-pag);
+}
+.imgfondo {
+  background-image: url("../images/banner-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+  justify-content: center;
+  align-content: center;
+  padding: 30px;
+  height: 300px;
+}
+
+.img-wrap {
+  img {
+    width: 100%;
+  }
+}

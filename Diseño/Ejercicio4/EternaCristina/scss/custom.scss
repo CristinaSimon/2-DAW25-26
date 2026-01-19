@@ -4,5 +4,35 @@
 // Incluye cualquier sobrescritura de variable predeterminada aquí (aunque las funciones no estarán disponibles)
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import url(../css/custom.css);
 
 // Luego agrega código personalizado adicional aquí
+
+.carousel-indicators {
+  border-radius: 400px;
+}
+
+.bg-img1 {
+  background-image: url("../img/slide/slide-1.jpg");
+  width:fit-content;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+}
+.bg-img2 {
+  background-image: url("../img/slide/slide-2.jpg");
+  width:fit-content;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+}
+.bg-img3 {
+  background-image: url("../img/slide/slide-3.jpg");
+  width:fit-content;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+}

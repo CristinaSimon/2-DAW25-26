@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
+  <title>Inmobiliaria Moderna</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <h1>🏠 Inmobiliaria -alquiler- Trassierra</h1>
+
+    <div class="filters-card">
+
+
+      <form id="buscarForm">
+        <!-- Fila 1: DNI solo -->
+        <div class="row g-3 mb-4">
+          <div class="col-12">
+            <label for="dni" class="form-label"><i class="fas fa-id-card me-2"></i>DNI Inquilino</label>
+            <input type="text" class="form-control" id="dni" name="dni" placeholder="Ej: 12345678A">
+          </div>
+        </div>
+        <h2 class="section-title">Filtros de Búsqueda</h2>
+        <!-- Fila 2: Zona y Tipo -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label for="zona" class="form-label"><i class="fas fa-map-marker-alt me-2"></i>Zona</label>
+            <select class="form-select" id="zonas" name="zonas">
+              <option value="">Selecciona una zona</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Fila 3: Precio Mínimo y Precio Máximo -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+            <label for="precioMin" class="form-label"><i class="fas fa-euro-sign me-2"></i>Precio Mínimo (€)</label>
+            <input type="number" class="form-control" id="precioMin" placeholder="Ej: 100000">
+          </div>
+          <div class="col-md-6">
+            <label for="precioMax" class="form-label"><i class="fas fa-euro-sign me-2"></i>Precio Máximo (€)</label>
+            <input type="number" class="form-control" id="precioMax" placeholder="Ej: 300000">
+          </div>
+        </div>
+
+        <!-- Botón de Acción -->
+
+        <div class="d-flex justify-content-center gap-3 flex-wrap m-4">
+          <button type="submit" class="btn btn-primary btn-search">
+            🔍 Buscar Inmuebles
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+
+
+    <!-- Tabla de Resultados -->
+    <div id="tabla-inmuebles"></div>
+
+    <!-- botón Grabar -->
+    <div class="d-flex justify-content-center gap-3 flex-wrap m-4">
+      <button id="btnReservar" class="btn btn-success btn-reservar ocultar" disabled>
+        💾 Grabar Reservas
+      </button>
+    </div>
+    <!-- Mensaje de estado (éxito o error) -->
+    <div id="mensajeEstado" class="alert text-center fw-bold d-none" role="alert"></div>
+  </div>
+
+
+
+
+</body>
+
+</html>
