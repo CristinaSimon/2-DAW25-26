@@ -1,0 +1,9 @@
+// Custom.scss
+// Opción A: Incluir todo Bootstrap
+// Incluye cualquier sobrescritura de variable predeterminada aquí (aunque las funciones no estarán disponibles)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url(../css/custom.css);
+
+// Luego agrega código personalizado adicional aquí
+
