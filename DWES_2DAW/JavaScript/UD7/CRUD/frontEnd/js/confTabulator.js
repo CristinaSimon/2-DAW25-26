@@ -1,5 +1,6 @@
-
-
+import { deleteUser } from "./API.js";
+import { mostrarMensajes } from "./funciones.js";
+import { showModal } from './funciones.js';
 
 /**
  * @description Configuración de columnas de tabulator
@@ -141,19 +142,47 @@ const columns = [
             const rowData = cell.getRow().getData();
 
             if (target.classList.contains('btn-edit')) {
-               editUser(rowData);
+                editarFila(rowData)
                
             } else if (target.classList.contains('btn-delete')) {
-                delUser(rowData);
-               
+
+                Swal.fire({
+                    title: `¿Desea eliminar el registro con ${rowData.id}`,
+                    showCancelButton: true,
+                    confirmButtonText: "Eliminar",
+                    focusCancel: true,
+                    cancelButtonText: `No eliminar`
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        try {
+                            const mensaje = await deleteUser(rowData.id);
+                             cell.getRow().delete(); //eliminar de la tabla
+                            await mostrarMensajes(mensaje.message, "alert-success");
+                        } catch (error) {
+                            await mostrarMensajes(mensaje.message, "danger-success");
+                        }
+
+
+                    }
+                });
 
             }
         }
     }
 ];
 
-const editUser = (fila) => {}
-const delUser = (fila) => {}
+const editarFila = (fila) => {
+   //cargar datos al formulario
+
+    document.querySelector("#modalTitle").textContent = "Actualizar Usuario";
+    document.querySelector("#nameUser").value = fila.name;
+    document.querySelector("#idUser").value= fila.id; //guardar id
+    document.querySelector("#emailUser").value = fila.email;
+    document.querySelector("#passUser").value = '';
+    document.querySelector("#roleUser").value = fila.role;
+    document.querySelector("#activeUser").checked = fila.active;
+    showModal();
+}
 
 /**
  * @function tableTabulator
@@ -245,3 +274,4 @@ export const confTabulator = () => {
 
     return table
 }
+

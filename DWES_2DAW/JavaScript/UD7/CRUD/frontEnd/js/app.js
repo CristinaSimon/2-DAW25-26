@@ -2,29 +2,33 @@
 
 import { confTabulator } from './confTabulator.js';
 import {validarFormulario} from './confFormulario.js';
-// import{setModal, showModal} from './funciones.js';
+import{setModal, showModal, setTable} from './funciones.js';
 
 const CRUD = (() => {
-    let table, modal;
+    let table;
     const init = () => {
         document.addEventListener("DOMContentLoaded", () => {
            const addUser=document.querySelector(".addUser");
-          
            const btncleanFilters=document.querySelector("#clearFilters");
-           
+          // Crear modal y asignar a la instancia del modal
+           const modal = new bootstrap.Modal(document.querySelector("#frmModal"));
+           setModal(modal); // Almacena la instancia del modal para poder mostrarlo u ocultarlo más adelante en otros script
 
            validarFormulario()  
            //listenner
-           addUser.addEventListener("click", addUsuario);
+           addUser.addEventListener("click", btnAddUsuario);
            btncleanFilters.addEventListener("click", filtrarFields);
            table = confTabulator(); //configurar tabla;
+           setTable(table); //guardar la tabla
          
         });
 
     }
 
-    const addUsuario = ()=>{
-        
+    const btnAddUsuario = ()=>{
+        document.querySelector("#modalTitle").textContent = "Nuevo Usuario";
+        document.querySelector("#frmUsuario").reset(); //limpiar el formulario
+        showModal(); //mostrar el modal
     }
     
  
