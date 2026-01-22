@@ -1,0 +1,81 @@
+:root {
+    --body: #F1F8FF;
+    --fondo-oscuro: #0F172B;
+    --principal: #FEA116;
+    --hover: #feaf39;
+    --secundario: #666565;
+    --font-family: "Nunito", sans-serif;
+}
+
+$yellow: var(--principal);
+$gray: var(--secundario);
+$primary: $yellow !default;
+$secondary: $gray !default;
+
+// Custom.scss
+// Opción A: Incluir todo Bootstrap
+// Incluye cualquier sobrescritura de variable predeterminada aquí (aunque las funciones no estarán disponibles)
+
+
+
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url(../css/custom.css);
+
+// Luego agrega código personalizado adicional aquí
+body {
+    background: var(--body);
+}
+
+.bg-oscu {
+    background: var(--fondo-oscuro);
+    color: var(--bs-white);
+}
+
+h3 {
+    color: var(--principal);
+    font-size: medium;
+    font-family: cursive;
+}
+
+.segundario {
+    color: var(--secundario);
+}
+
+.btn-tipo {
+    background: var(--principal);
+    color: white;
+    width: 200px;
+    border: 0px;
+}
+
+.btn-tipo:hover {
+    background: var(--hover);
+}
+
+a {
+    span {
+        color: var(--principal);
+        font-weight: bolder;
+        font-size: x-large;
+    }
+}
+
+.card-body {
+    img {
+        border-radius: 50%;
+        width: 80%;
+    }
+}
+
+.card {
+    margin: 12px;
+}
+
+.b-su {
+    border: 1px white, solid;
+}
+
+.b-lat {
+    border-right: 1px solid white;
+}
