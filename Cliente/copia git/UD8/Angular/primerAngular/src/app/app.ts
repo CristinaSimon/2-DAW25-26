@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { Head } from "./components/head/head";
 import { Body } from "./components/body/body";
 import { Footer } from "./components/footer/footer";
+import { Iforcom } from './components/iforcom/iforcom';
 
 @Component({
   selector: 'app-root',
-  imports: [Body, Head, Footer],
+  imports: [Head, Footer, Iforcom],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
