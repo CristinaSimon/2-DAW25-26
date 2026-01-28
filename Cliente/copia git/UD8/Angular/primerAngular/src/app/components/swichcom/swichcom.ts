@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styles: ``,
 })
 export class Swichcom {
+public tipoAlerta:string="primary";
 
+cambiarAlerta(clase:string):void{
+  this.tipoAlerta=clase; 
+}
 }

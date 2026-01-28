@@ -4,10 +4,15 @@ import { Head } from "./components/head/head";
 import { Body } from "./components/body/body";
 import { Footer } from "./components/footer/footer";
 import { Iforcom } from './components/iforcom/iforcom';
+import { Swichcom } from "./components/swichcom/swichcom";
+import { NgStyleC } from "./components/ng-style-c/ng-style-c";
+import { NgClassC } from "./components/ng-class-c/ng-class-c";
+import { Doblebinding } from "./components/doblebinding/doblebinding";
+import { Pipes } from "./components/pipes/pipes";
 
 @Component({
   selector: 'app-root',
-  imports: [Head, Footer, Iforcom],
+  imports: [Head, Footer, Pipes],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

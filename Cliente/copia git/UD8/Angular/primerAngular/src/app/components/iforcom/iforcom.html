@@ -40,10 +40,10 @@
         <hr>
         <ul class="list-group">
             @for(item of aLenguajes; track $index; let count=$count){
-               <li class="list-group">{{$index+1}}/{{count}}-{{item}}</li>
+               <li class="list-group-item">{{$index+1}}/{{count}}-{{item}}</li>
             }
             @empty{
-                <li class="list-group"> No hay lenguajes</li>
+                <li class="list-group-item"> No hay lenguajes</li>
             }
         </ul>
     </div>

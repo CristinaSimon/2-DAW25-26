@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo de Tailwind</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body
+    class="h-screen bg-[url('../img/img1.jpg')] bg-cover bg-center text-white"
+  >
+    <header class="bg-[#FFFFFF30]">
+      <nav class="flex h-16 items-center justify-between px-12 lg:gap-8">
+        <a
+          class="border-2 px-2 py-1 text-2xl font-bold whitespace-nowrap"
+          href="#"
+          >Tailwind Anytime</a
+        >
+        <div
+          class="dropdown-menu absolute -top-full left-0 flex w-full flex-col items-center gap-6 py-2 text-lg font-bold max-lg:bg-[#FFFFFF30] lg:static lg:flex-row lg:justify-between"
+        >
+          <ul class="flex flex-col items-center gap-6 lg:flex-row">
+            <li class="cursor-pointer hover:text-orange-400">Home</li>
+            <li class="cursor-pointer hover:text-orange-400">
+              Tailwind CSS Tips
+            </li>
+            <li class="cursor-pointer hover:text-orange-400">Videos</li>
+            <li class="cursor-pointer hover:text-orange-400">Blogs</li>
+            <li class="cursor-pointer hover:text-orange-400">Courses</li>
+          </ul>
+          <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-8">
+            <button class="cursor-pointer hover:text-orange-400">Login</button>
+            <button class="cursor-pointer rounded-lg bg-orange-400 px-2 py-1">
+              Sign up
+            </button>
+          </div>
+        </div>
+        <div class="toggle-button cursor-pointer lg:hidden">
+          <i class="fa-solid fa-bars fa-lg"></i>
+        </div>
+      </nav>
+    </header>
+
+    <script>
+      const toggleBtn = document.querySelector(".toggle-button");
+      const dropdown = document.querySelector(".dropdown-menu");
+
+      toggleBtn.addEventListener("click", () => {
+        dropdown.classList.toggle("top-16");
+        dropdown.classList.toggle("-top-full");
+      });
+    </script>
+  </body>
+</html>
