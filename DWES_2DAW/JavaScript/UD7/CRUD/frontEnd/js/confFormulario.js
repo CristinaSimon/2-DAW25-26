@@ -44,38 +44,39 @@ export const validarFormulario = () => {
       {
         //Valida si el título de la ventana es 'Nuevo Usuario'
         validator: (value) => {
-          const modalTitle = document.querySelector("#modalTitle")?.textContent || "";
+          const modalTitle =
+            document.querySelector("#modalTitle")?.textContent || "";
           const isNuevoUsr = modalTitle === "Nuevo Usuario";
 
           // Solo validar como obligatorio si es nuevo usuario
           if (isNuevoUsr) {
-            return Boolean(value && value.trim() !== '');
+            return Boolean(value && value.trim() !== "");
           }
 
           // Si es actualizar, siempre es válido (vacío o con valor)
           return true;
         },
-        errorMessage: "La contraseña es obligatoria"
+        errorMessage: "La contraseña es obligatoria",
       },
       {
         //valida la longitud mínima, solo si hay valor
         validator: (value) => {
           // Si está vacío o es undefined/null, válido
-          if (!value || value.trim() === '') {
+          if (!value || value.trim() === "") {
             return true;
           }
 
           // Si tiene valor, validar longitud mínima
           return Boolean(value.length >= 8);
         },
-        errorMessage: "Mínimo 8 caracteres"
+        errorMessage: "Mínimo 8 caracteres",
       },
       {
         //valida la complejidad de la contraseña, solo si hay valorSi
         rule: "custom",
         validator: (value) => {
           // Si está vacío o es undefined/null, válido
-          if (!value || value.trim() === '') {
+          if (!value || value.trim() === "") {
             return true;
           }
 
@@ -84,10 +85,12 @@ export const validarFormulario = () => {
           // const hasLowerCase = /[a-z]/.test(value);
           // const hasNumber = /[0-9]/.test(value);
           // const hasSymbol = /[\W_]/.test(value);
-          return Boolean( /[A-Z]/.test(value) &&
-              /[a-z]/.test(value) &&
-              /[0-9]/.test(value) &&
-              /[\W_]/.test(value)); // aquí incluimos el guion bajo _. \W cualquier caracter que no sea letra ni número ni guión bajo
+          return Boolean(
+            /[A-Z]/.test(value) &&
+            /[a-z]/.test(value) &&
+            /[0-9]/.test(value) &&
+            /[\W_]/.test(value),
+          ); // aquí incluimos el guion bajo _. \W cualquier caracter que no sea letra ni número ni guión bajo
 
           // return Boolean(hasUpperCase && hasLowerCase && hasNumber && hasSymbol);
         },
@@ -112,26 +115,23 @@ export const validarFormulario = () => {
       const titulo = document.querySelector("#modalTitle");
 
       try {
-
-        const accion = titulo.textContent === "Nuevo Usuario" ? addUser : updateUser;
+        const accion =
+          titulo.textContent === "Nuevo Usuario" ? addUser : updateUser;
         const respuesta = await accion(formData);
-        
+
         // Verificar si es addUser (tiene id) o updateUser (solo mensaje)
         if (respuesta.id) {
-          mensajeSweetAlert(`Usuario añadido con ID: ${respuesta.id}`, "success");
+          mensajeSweetAlert(
+            `Usuario añadido con ID: ${respuesta.id}`,
+            "success",
+          );
         } else {
           mensajeSweetAlert(respuesta.message, "success");
         }
         refreshTable(); //  Refrescar tabla
         hideModal(); //oculta el modal
-
       } catch (error) {
         mensajeSweetAlert(`${error.message}. ${error.error}`, error);
       }
-
-
     });
 };
-
-
-
