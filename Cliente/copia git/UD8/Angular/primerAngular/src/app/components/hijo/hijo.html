@@ -1,0 +1,16 @@
+<div class="container mt-4">
+    <h1>Componente Hijo</h1>
+    <hr />
+    <div class="control">
+      <h4>🔊 {{nombre()}} </h4>
+      
+      <p>Volumen actual: </p>
+      
+      <div class="botones">
+        <button (click)="bajarVolumen()" >➖ Bajar</button>
+        <button (click)="subirVolumen()">➕ Subir</button>
+        <button (click)="muterarVolumen()" >🔇 Silencio</button>
+        <button (click)="maxVolumen()" >🔊 Máximo</button>
+      </div>
+    </div>
+</div>

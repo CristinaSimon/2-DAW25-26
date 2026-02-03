@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { PipepasswordPipe } from '../../pipesPersonal/pipepassword-pipe';
+import { FiltrarlistaPipe } from '../../pipesPersonal/filtrarlista-pipe';
 
 @Component({
   selector: 'app-pipes',
-  imports: [CommonModule],
+  imports: [CommonModule, PipepasswordPipe,FiltrarlistaPipe],
   templateUrl: './pipes.html',
   styles: ``,
 })

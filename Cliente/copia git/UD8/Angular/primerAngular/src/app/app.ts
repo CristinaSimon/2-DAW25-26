@@ -9,10 +9,12 @@ import { NgStyleC } from "./components/ng-style-c/ng-style-c";
 import { NgClassC } from "./components/ng-class-c/ng-class-c";
 import { Doblebinding } from "./components/doblebinding/doblebinding";
 import { Pipes } from "./components/pipes/pipes";
+import { SignalC } from "./components/signal-c/signal-c";
+import { Padre } from "./components/padre/padre";
 
 @Component({
   selector: 'app-root',
-  imports: [Head, Footer, Pipes],
+  imports: [Head, Footer, Pipes, SignalC, Padre],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
