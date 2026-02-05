@@ -14,7 +14,7 @@ import { Padre } from "./components/padre/padre";
 
 @Component({
   selector: 'app-root',
-  imports: [Head, Footer, Pipes, SignalC, Padre],
+  imports: [Head, Footer, Pipes, SignalC, Padre, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Ejemplo: Crear una lista y mostrar su resultado</h2>
+  
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Descripción</th>
+        <th>Categoría</th>
+        <th>Precio</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+<tbody>
+  @for (product of aProducts; track $index; let count = $count) {
+    <tr>
+      <td>{{ $index + 1 }}/{{ count }}</td>
+
+      <td [ngClass]="{ 'bold-text': isPriceLow(product.precio) }">
+        {{ product.descripcion | titlecase }}
+      </td>
+
+      <td [ngClass]="{ 'bold-text': isPriceLow(product.precio) }">
+        {{ product.categoria | titlecase }}
+      </td>
+
+      <td [ngClass]="{ 'bold-text': isPriceLow(product.precio) }">
+        {{ product.precio.toFixed(2) }} €
+      </td>
+
+      <td [ngStyle]="{ color: product.stock ? 'black' : 'red' }">
+        {{ product.stock ? 'Con stock' : 'Sin stock' }}
+      </td>
+    </tr>
+  }
+  @empty {
+    <tr>
+      <td colspan="5" class="text-center">
+        No hay productos
+      </td>
+    </tr>
+  }
+</tbody>
+  </table>
+</div>
