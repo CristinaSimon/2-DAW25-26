@@ -12,4 +12,9 @@ export class Listaestudiantes {
   public aEstudiantes: Estudiante[]=[
     {id:1, nombre: 'Juan Perez', edad: 20, promedio:8.5}
   ]
+  fondo(){
+    if(this.aEstudiantes.length>3){
+      background: "green"
+    }
+  }
 }

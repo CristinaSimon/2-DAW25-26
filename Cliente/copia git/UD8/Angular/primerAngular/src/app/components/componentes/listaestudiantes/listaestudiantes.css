@@ -23,4 +23,5 @@ h1 {
 .lista {
     display: grid;
     gap: 15px;
+    background: #000;
 }
