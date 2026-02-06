@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Body } from './components/body/body';
 
 export const routes: Routes = [
+    { path: '', loadComponent: () => import('./components/body/body').then(c => c.Body) },
     { path: 'body', loadComponent: () => import('./components/body/body').then(c => c.Body) },
     { path: 'dobleblinding', loadComponent: () => import('./components/doblebinding/doblebinding').then(c => c.Doblebinding) },
     { path: 'iffor', loadComponent: () => import('./components/iforcom/iforcom').then(c => c.Iforcom) },
@@ -12,7 +13,7 @@ export const routes: Routes = [
     { path: 'signal', loadComponent: () => import('./components/signal-c/signal-c').then(c => c.SignalC) },
     { path: 'padre', loadComponent: () => import('./components/padre/padre').then(c => c.Padre) },
     { path: 'ejemplo', loadComponent: () => import('./components/ejemplo/ejemplo').then(c => c.Ejemplo) },
+    { path: 'estudiantes', loadComponent: () => import('./components/componentes/listaestudiantes/listaestudiantes').then(c => c.Listaestudiantes) },
 
-
-    //    {path: '**'}
+    { path: '**', loadComponent: () => import('./components/pagina404/pagina404').then(c => c.Pagina404) }
 ];
