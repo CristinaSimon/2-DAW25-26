@@ -15,9 +15,9 @@ export const routes: Routes = [
     { path: 'ejemplo', loadComponent: () => import('./components/ejemplo/ejemplo').then(c => c.Ejemplo) },
     { path: 'estudiantes', loadComponent: () => import('./components/componentes/listaestudiantes/listaestudiantes').then(c => c.Listaestudiantes) },
     { path: 'servicios', loadComponent: () => import('./components/servicios/servicios').then(c => c.Servicios) },
-    { path: 'login', loadComponent: () => import('./componets/usuarios/login/login').then(c => c.Login) },
-    { path: 'login', loadComponent: () => import('./componets/usuarios/crud/crud').then(c => c.Crud) },
-    { path: 'login', loadComponent: () => import('./componets/usuarios/formulario/formulario').then(c => c.Formulario) },
+    { path: 'login', loadComponent: () => import('./components/usuarios/login/login').then(c => c.Login) },
+    { path: 'login', loadComponent: () => import('./components/usuarios/crud/crud').then(c => c.CRUD) },
+    { path: 'login', loadComponent: () => import('./components/usuarios/formulario/formulario').then(c => c.Formulario) },
 
     { path: '**', loadComponent: () => import('./components/pagina404/pagina404').then(c => c.Pagina404) }
 ];
