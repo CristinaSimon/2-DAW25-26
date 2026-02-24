@@ -1,0 +1,54 @@
+<div class="form-wrapper">
+    <div class="form-container">
+        <header class="form-header">
+            <h2>Registro de Nueva Mascota</h2>
+            <p>Introduce los datos para dar de alta al animal en el sistema.</p>
+        </header>
+
+        <form  class="material-form">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nombre de la Mascota</mat-label>
+                <input matInput  placeholder="Ej: Max, Luna...">
+                
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Especie</mat-label>
+                <mat-select >
+                    <mat-option value="Perro">Perro</mat-option>
+                    <mat-option value="Gato">Gato</mat-option>
+                    <mat-option value="Pájaro">Pájaro</mat-option>
+                    <mat-option value="Otro">Otro</mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+
+            <div class="row">
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Edad (años)</mat-label>
+                    <input matInput type="number" >
+                   
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Valoración (1-5)</mat-label>
+                    <input matInput type="number">
+                   
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Precio de Adopción/Venta (€)</mat-label>
+                <input matInput type="number" >
+                <span matSuffix>€</span>
+              
+            </mat-form-field>
+
+            <div class="form-actions">
+                <button type="button" mat-button >Cancelar</button>
+                <button type="submit" mat-raised-button color="primary" >Guardar
+                    Mascota</button>
+            </div>
+        </form>
+    </div>
+</div>

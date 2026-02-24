@@ -1,0 +1,39 @@
+<div [ngStyle]="estilo" class="body-wrapper weekday-theme">
+  <header class="body-header">
+    <div class="header-content">
+      <h1>Centro de Adopción de Mascotas</h1>
+      <p class="description">Bienvenido al centro de adopción donde encontrarás tu nuevo amigo peludo.</p>
+    </div>
+    <div class="date-widget">
+      <span class="day-label">{{dSemana[dia]}}</span>
+      <span class="full-date">{{fecha | date:'longDate'}}</span>
+    </div>
+  </header>
+
+  <main class="body-content">
+    <section class="status-panel">
+      <div class="status-card information">
+       
+        <i class="icon">📅</i>
+        <h3>Jornada Actual</h3>
+         @if(laboral){
+        <div>{{mensajelaboral}}</div>
+        }
+        @else {
+        <div>{{mensajefinde}}</div>
+        }
+      </div>
+
+      <div class="status-card stats">
+        <i class="icon">🐾</i>
+        <h3>Nuestras Mascotas</h3>
+        <p>Actualmente tenemos mascotas bajo nuestro cuidado esperando un hogar.
+        </p>
+      </div>
+    </section>
+
+
+  </main>
+
+
+</div>

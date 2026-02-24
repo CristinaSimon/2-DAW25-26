@@ -1,0 +1,548 @@
+---------------------componente Body ----------------------
+--css--
+:host {
+  display: block;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.body-wrapper {
+  min-height: 80vh;
+  margin: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.weekday-theme { background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%); }
+.weekend-theme { background: linear-gradient(135deg, #ffffff 0%, #fff0f0 100%); }
+
+.body-header {
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.header-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 600px;
+}
+
+.date-widget {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.day-label {
+  display: block;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #34495e;
+}
+
+.full-date {
+  font-size: 0.9rem;
+  color: #95a5a6;
+}
+
+.body-content {
+  padding: 2rem;
+  flex: 1;
+}
+
+.status-panel {
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.status-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  border-left: 6px solid #bdc3c7;
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.status-card.stats {
+  border-left-color: #2ecc71;
+}
+
+.status-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.status-card.active-day {
+  border-left-color: #3498db;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.instructions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.instruct-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #3498db;
+  opacity: 0.15;
+}
+
+---html---
+<div class="body-wrapper" >
+  <header class="body-header">
+    <div class="header-content">
+      <h1>Centro de Adopción de Mascotas</h1>
+      <p class="description">Bienvenido al centro de adopción donde encontrarás tu nuevo amigo peludo.</p>
+    </div>
+    <div class="date-widget" >
+      <span class="day-label"></span>
+      <span class="full-date"></span>
+    </div>
+  </header>
+
+  <main class="body-content">
+    <section class="status-panel">
+      <div class="status-card information">
+        <i class="icon">📅</i>
+        <h3>Jornada Actual</h3>
+       
+      </div>
+
+      <div class="status-card stats">
+        <i class="icon">🐾</i>
+        <h3>Nuestras Mascotas</h3>
+        <p>Actualmente tenemos  mascotas bajo nuestro cuidado esperando un hogar.
+        </p>
+      </div>
+    </section>
+
+
+  </main>
+
+
+</div>
+
+----------------------------------------------------------------
+-----------------Componente mascota-card------------------------
+--css--
+.card {
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  margin: 1rem;
+  border-radius: 12px;
+  width: 220px;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.actions {
+  margin-top: auto;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+/* Clases dinámicas por especie */
+.perro { border-top: 8px solid brown; }
+.gato { border-top: 8px solid #7f8c8d; }
+.pajaro { border-top: 8px solid #f1c40f; }
+.default { border-top: 8px solid #3498db; }
+
+--html--
+<mat-card class="mascota-card" >
+    <mat-card-header>
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p><strong>Edad:</strong>  años</p>
+        <p><strong>Precio:</strong> </p>
+        <p><strong>Valoración:</strong></p>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-flat-button color="primary" >
+            <mat-icon>touch_app</mat-icon> Seleccionar
+        </button>
+        <button mat-stroked-button color="warn">
+            <mat-icon>delete</mat-icon> Eliminar
+        </button>
+    </mat-card-actions>
+</mat-card>
+
+-----------------------------------------------------------------
+--------------- componente mascota-form ------------------------
+--css--
+.form-wrapper {
+  padding: 3rem 1rem;
+  background-color: #f4f7f6;
+  min-height: 80vh;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.form-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-header h2 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.form-header p {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.half {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #34495e;
+  font-size: 0.9rem;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.input-group {
+  position: relative;
+}
+
+.currency-symbol {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8c8d;
+  font-weight: bold;
+}
+
+.material-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-cancel {
+  background-color: #f1f2f6;
+  color: #2f3542;
+}
+
+.btn-cancel:hover {
+  background-color: #dfe4ea;
+}
+
+.btn-save {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-save:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.btn-save:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+---html---
+<div class="form-wrapper">
+    <div class="form-container">
+        <header class="form-header">
+            <h2>Registro de Nueva Mascota</h2>
+            <p>Introduce los datos para dar de alta al animal en el sistema.</p>
+        </header>
+
+        <form  class="material-form">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Nombre de la Mascota</mat-label>
+                <input matInput  placeholder="Ej: Max, Luna...">
+                
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Especie</mat-label>
+                <mat-select >
+                    <mat-option value="Perro">Perro</mat-option>
+                    <mat-option value="Gato">Gato</mat-option>
+                    <mat-option value="Pájaro">Pájaro</mat-option>
+                    <mat-option value="Otro">Otro</mat-option>
+                </mat-select>
+                
+            </mat-form-field>
+
+            <div class="row">
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Edad (años)</mat-label>
+                    <input matInput type="number" >
+                   
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="half-width">
+                    <mat-label>Valoración (1-5)</mat-label>
+                    <input matInput type="number">
+                   
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Precio de Adopción/Venta (€)</mat-label>
+                <input matInput type="number" >
+                <span matSuffix>€</span>
+              
+            </mat-form-field>
+
+            <div class="form-actions">
+                <button type="button" mat-button >Cancelar</button>
+                <button type="submit" mat-raised-button color="primary" >Guardar
+                    Mascota</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+-----------------------------------------------------------------
+---------------------Componente mascotas-list----------------------
+--css-- 
+.list-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 1rem;
+}
+
+.list-header h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 2rem;
+}
+
+.add-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background-color: #27ae60;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.selection-info {
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: #ebf5fb;
+  border-left: 5px solid #3498db;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.selection-badge {
+  background-color: #3498db;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+--html--
+<div class="list-container">
+    <header class="list-header">
+        <h2>Nuestras Mascotas</h2>
+        <button mat-fab extended color="primary">
+            <mat-icon>add</mat-icon>
+            Añadir Mascota
+        </button>
+    </header>
+
+    <div class="cards-grid">
+      
+    </div>
+</div>
+
+------emojis estrellas------
+★ -estrella llena
+☆ -estrella vacía
