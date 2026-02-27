@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent-A-Car: Gestión de Alquiler de Vehículos</title>
+    <!-- Librerias Externas -->
+     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./librerias/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./librerias/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./librerias/tabulator/tabulator.min.css">    
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="main-container">
+            <div class="header">
+                <i class="fas fa-car-side"></i>
+                <h1>Premium Rent-A-Car</h1>
+                <p class="mb-0">Encuentra el vehículo perfecto para tu próximo viaje</p>
+            </div>
+
+
+            <form id="formAlquiler">
+                <section class="mb-5">
+                    <h3 class="section-title"><i class="fas fa-user-check"></i> 1. Identificación del Cliente</h3>
+                    <div id="wrapperCliente" class="row g-3">
+                        <div class="col-md-9">
+                            <label for="codigo_socio" class="form-label">Código Socio Premium</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-crown"></i></span>
+                                <input type="text" class="form-control" id="codigo_socio" name="codigo_socio"
+                                    placeholder="Formato: PRM-AB1234-XY">
+                            </div>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="button" id="btnValidarCliente" class="btn btn-primary w-100">
+                                <i class="fas fa-search"></i> Validar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-3 p-3 rounded-3 ocultar">
+                        <div id="infoCliente" class="alert alert-success mt-3 animate__animated animate__fadeIn">
+                            <h5 class="alert-heading">
+                                <!-- Info del cliente cargada vía AJAX -->
+                            </h5>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Paso 2: Configuración del Alquiler -->
+                <section id="seccionFiltros" class="mb-5 ocultar">
+                    <h3 class="section-title"><i class="fas fa-filter"></i> 2. Configuración del Alquiler</h3>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="categoria" class="form-label">Categoría</label>
+                            <select class="form-select" id="categoria">
+                                <option value="">Seleccione categoría...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="marca" class="form-label">Marca</label>
+                            <select class="form-select" id="marca" disabled>
+                                <option value="">Primero seleccione categoría...</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Paso 3: Selección de Vehículo -->
+                <section id="seccionVehiculos" class="mb-5 ocultar">
+                    <h3 class="section-title"><i class="fas fa-car"></i> 3. Selección de Vehículo</h3>
+                    <div id="listaVehiculos" class="row row-cols-1 row-cols-md-3 g-4">
+                        <!-- Vehículos cargados -->
+                    </div>
+                </section>
+
+                <!-- Paso 4: Detalles de la Reserva -->
+                <section id="seccionReserva" class="mb-5 ocultar">
+                    <h3 class="section-title"><i class="fas fa-calendar-alt"></i> 4. Detalles de la Reserva</h3>
+                    <div id="wrapperReserva">
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <label for="fechaInicio" class="form-label">Fecha Inicio</label>
+                                <input type="date" class="form-control" id="fechaInicio" name="fechaInicio">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="fechaFin" class="form-label">Fecha Fin</label>
+                                <input type="date" class="form-control" id="fechaFin" name="fechaFin">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="precioTotal" class="form-label">Precio Estimado (€)</label>
+                                <input type="text" class="form-control" id="precioTotal" readonly>
+                            </div>
+                            <div class="col-12">
+                                <label for="observaciones" class="form-label">Observaciones</label>
+                                <textarea class="form-control" id="observaciones" rows="3"
+                                    placeholder="Peticiones especiales..."></textarea>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-check-circle"></i> Confirmar Reserva
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                      <!-- Mensajes de Estado Globales -->
+                    <div id="mensajeEstado" class="alert text-center fw-bold ocultar" role="alert"></div>
+                </section>
+            </form>
+
+            <!-- Paso 4: Historial de Reservas -->
+            <section id="seccionHistorial" class="mt-5">
+                <h3 class="section-title"><i class="fas fa-history"></i> Tus Reservas</h3>
+                <div id="tablaReservas"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="./librerias/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./librerias/justValidation/just-validate.production.min.js"></script>
+    <script src="./librerias/tabulator/tabulator.min.js"></script>
+    <script type="module" src="./js/app.js"></script>  
+
+   
+</body>
+
+</html>
